@@ -1,0 +1,10 @@
+{
+  "type": "tabakmod:tabaksamen_aus_gras",
+  "conditions": [
+    {
+      "condition": "block_state_property",
+      "block": "minecraft:grass"
+    }
+  ],
+  "item": "tabakmod:tabaksamen"
+}

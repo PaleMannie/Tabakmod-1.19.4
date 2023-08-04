@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "tabakmod:getrockneter_tabakballen",
+    "tabakmod:heller_tabakballen",
+    "tabakmod:mittlerer_tabakballen",
+    "tabakmod:dunkler_tabakballen"
+
+  ]
+}

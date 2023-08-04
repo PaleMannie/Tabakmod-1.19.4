@@ -1,0 +1,13 @@
+{
+  "item.tabakmod.tabaksamen": "Tobacco Seeds",
+  "item.tabakmod.getrockneter_tabakblatt": "Dried Tobacco Leaf",
+  "item.tabakmod.fast_getrockneter_tabakblatt": "Nearly Dried Tobacco Leaf",
+  "item.tabakmod.halb_getrockneter_tabakblatt": "Half Dried Tobacco Leaf",
+  "item.tabakmod.leicht_getrockneter_tabakblatt": "Lightly Dried Tobacco Leaf",
+  "item.tabakmod.roher_tabakblatt": "Raw Tobacco Leaf",
+  "block.tabakmod.getrockneter_tabakballen": "Dried Tobacco Bale",
+  "block.tabakmod.heller_tabakballen": "Bright Tobacco Bale",
+  "block.tabakmod.mittlerer_tabakballen": "Medium Tobacco Bale",
+  "block.tabakmod.dunkler_tabakballen": "Dark Tobacco Bale",
+  "creativemodetab.tabak_tab": "Super Tobacco Mod"
+}

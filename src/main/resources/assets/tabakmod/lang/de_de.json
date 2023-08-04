@@ -1,0 +1,13 @@
+{
+  "item.tabakmod.tabaksamen": "Tabaksamen",
+  "item.tabakmod.getrockneter_tabakblatt": "Getrockneter Tabakblatt",
+  "item.tabakmod.fast_getrockneter_tabakblatt": "Fast getrockneter Tabakblatt",
+  "item.tabakmod.halb_getrockneter_tabakblatt": "Halb getrockneter Tabakblatt",
+  "item.tabakmod.leicht_getrockneter_tabakblatt": "Leicht getrockneter Tabakblatt",
+  "item.tabakmod.roher_tabakblatt": "Roher Tabakblatt",
+  "block.tabakmod.getrockneter_tabakballen": "Getrockneter Tabakballen",
+  "block.tabakmod.heller_tabakballen": "Heller Tabakballen",
+  "block.tabakmod.mittlerer_tabakballen": "Mittlerer Tabakballen",
+  "block.tabakmod.dunkler_tabakballen": "Dunkler Tabakballen",
+  "creativemodetab.tabak_tab": "Super Tabakmod"
+}

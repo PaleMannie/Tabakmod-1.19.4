@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "tabakmod:block/getrockneter_tabakballen"
+  }
+}
