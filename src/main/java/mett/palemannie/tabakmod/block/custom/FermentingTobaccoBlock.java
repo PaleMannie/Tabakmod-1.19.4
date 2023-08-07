@@ -10,9 +10,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
-import java.util.Random;
-
-public class ModTabakballenGaerungUndFlammbarkeitBlock extends Block implements GaerenderTabak {
+public class FermentingTobaccoBlock extends Block implements FermentingTobacco {
     //------------------------------------------------------------------------------------------------------------------
     @Override
     public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
@@ -32,15 +30,15 @@ public class ModTabakballenGaerungUndFlammbarkeitBlock extends Block implements 
         entity.causeFallDamage(v, 0.5f, level.damageSources().fall());
     }
     //------------------------------------------------------------------------------------------------------------------
-    private final GaerStatus gaerStatus;
-    public ModTabakballenGaerungUndFlammbarkeitBlock(GaerStatus gaerStatus, Properties properties) {
+    private final FermentState fermentState;
+    public FermentingTobaccoBlock(FermentState fermentState, Properties properties) {
         super(properties);
-        this.gaerStatus = gaerStatus;
+        this.fermentState = fermentState;
     }
 
     @Override
     public boolean isRandomlyTicking(BlockState state) {
-        return GaerenderTabak.getNext(state.getBlock()).isPresent();
+        return FermentingTobacco.getNext(state.getBlock()).isPresent();
     }
 
     @Override
@@ -48,8 +46,8 @@ public class ModTabakballenGaerungUndFlammbarkeitBlock extends Block implements 
         super.randomTick(state, level, pos, random);
     }
 
-    public GaerStatus getAge(){
-        return gaerStatus;
+    public FermentState getAge(){
+        return fermentState;
     }
     //------------------------------------------------------------------------------------------------------------------
 

@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import java.util.Optional;
 import java.util.function.Supplier;
 
-public interface GaerenderTabak extends ChangeOverTimeBlock<GaerenderTabak.GaerStatus> {
+public interface FermentingTobacco extends ChangeOverTimeBlock<FermentingTobacco.FermentState> {
 
     BiMap<Block,Block> NEXT_BY_BLOCK = HashBiMap.create();
     Supplier<BiMap<Block, Block>> PREVIOUS_BY_BLOCK = Suppliers.memoize(NEXT_BY_BLOCK::inverse);
@@ -42,14 +42,14 @@ public interface GaerenderTabak extends ChangeOverTimeBlock<GaerenderTabak.GaerS
     }
 
     default float getChanceModifier(){
-        return this.getAge() == GaerStatus.GETROCKNET ? 0.75F : 1.0F;
+        return this.getAge() == FermentState.DRIED ? 0.75F : 1.0F;
     }
 
-    enum GaerStatus{
-        GETROCKNET,
-        HELL,
-        MITTEL,
-        DUNKEL
+    enum FermentState {
+        DRIED,
+        LIGHT,
+        MEDIUM,
+        DARK
 
     }
 }

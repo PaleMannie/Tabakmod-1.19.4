@@ -26,7 +26,7 @@ public class ModItems
     public static final RegistryObject<Item> ROHER_TABAKBLATT = ITEMS.register("roher_tabakblatt",
             () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> TABAKSAMEN = ITEMS.register("tabaksamen",
+    public static final RegistryObject<Item> TOBACCO_SEEDS = ITEMS.register("tabaksamen",
             () -> new Item(new Item.Properties()));
     public static void register(IEventBus eventBus)
     {

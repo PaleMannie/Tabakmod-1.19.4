@@ -45,14 +45,14 @@ public class TabakMod
     private void addCreative(CreativeModeTabEvent.BuildContents event)
     {
         if(event.getTab() == CreativeModeTabs.NATURAL_BLOCKS) {
-            event.accept(ModBlocks.GETROCKNETER_TABAKBALLEN);
-            event.accept(ModBlocks.HELLER_TABAKBALLEN);
-            event.accept(ModBlocks.MITTLERER_TABAKBALLEN);
-            event.accept(ModBlocks.DUNKLER_TABAKBALLEN);
+            event.accept(ModBlocks.DRIED_TOBACCO_BALE);
+            event.accept(ModBlocks.LIGHT_TOBACCO_BALE);
+            event.accept(ModBlocks.MEDIUM_TOBACCO_BALE);
+            event.accept(ModBlocks.DARK_TOBACCO_BALE);
         }
 
         if(event.getTab() == CreativeModeTabs.FOOD_AND_DRINKS) {
-            event.accept(ModItems.TABAKSAMEN);
+            event.accept(ModItems.TOBACCO_SEEDS);
             event.accept(ModItems.GETROCKNETER_TABAKBLATT);
             event.accept(ModItems.FAST_GETROCKNETER_TABAKBLATT);
             event.accept(ModItems.HALB_GETROCKNETER_TABAKBLATT);
@@ -65,11 +65,11 @@ public class TabakMod
                 event.accept(ModItems.HALB_GETROCKNETER_TABAKBLATT);
                 event.accept(ModItems.LEICHT_GETROCKNETER_TABAKBLATT);
                 event.accept(ModItems.ROHER_TABAKBLATT);
-                event.accept(ModItems.TABAKSAMEN);
-                event.accept(ModBlocks.GETROCKNETER_TABAKBALLEN);
-                event.accept(ModBlocks.HELLER_TABAKBALLEN);
-                event.accept(ModBlocks.MITTLERER_TABAKBALLEN);
-                event.accept(ModBlocks.DUNKLER_TABAKBALLEN);
+                event.accept(ModItems.TOBACCO_SEEDS);
+                event.accept(ModBlocks.DRIED_TOBACCO_BALE);
+                event.accept(ModBlocks.LIGHT_TOBACCO_BALE);
+                event.accept(ModBlocks.MEDIUM_TOBACCO_BALE);
+                event.accept(ModBlocks.DARK_TOBACCO_BALE);
 
         }
 
