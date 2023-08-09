@@ -10,7 +10,10 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class FermentingTobaccoBlock extends Block implements FermentingTobacco {
+public class HellerTabakballenBlock extends Block {
+    public HellerTabakballenBlock(Properties p_49795_) {
+        super(p_49795_);
+    }
     //------------------------------------------------------------------------------------------------------------------
     @Override
     public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
@@ -30,25 +33,18 @@ public class FermentingTobaccoBlock extends Block implements FermentingTobacco {
         entity.causeFallDamage(v, 0.5f, level.damageSources().fall());
     }
     //------------------------------------------------------------------------------------------------------------------
-    private final FermentState fermentState;
-    public FermentingTobaccoBlock(FermentState fermentState, Properties properties) {
-        super(properties);
-        this.fermentState = fermentState;
+
+    @Override
+    public void animateTick(BlockState p_220827_, Level level, BlockPos p_220829_, RandomSource p_220830_) {
+        
+        super.animateTick(p_220827_, level, p_220829_, p_220830_);
     }
 
     @Override
-    public boolean isRandomlyTicking(BlockState state) {
-        return FermentingTobacco.getNext(state.getBlock()).isPresent();
+    public void tick(BlockState p_222945_, ServerLevel p_222946_, BlockPos p_222947_, RandomSource p_222948_) {
+        super.tick(p_222945_, p_222946_, p_222947_, p_222948_);
     }
 
-    @Override
-    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        super.randomTick(state, level, pos, random);
-    }
-
-    public FermentState getAge(){
-        return fermentState;
-    }
     //------------------------------------------------------------------------------------------------------------------
 
 }

@@ -1,15 +1,26 @@
 package mett.palemannie.tabakmod.block;
 
 import mett.palemannie.tabakmod.TabakMod;
-import mett.palemannie.tabakmod.block.custom.FermentingTobacco;
-import mett.palemannie.tabakmod.block.custom.FermentingTobaccoBlock;
+import mett.palemannie.tabakmod.block.custom.DunklerTabakballenBlock;
+import mett.palemannie.tabakmod.block.custom.HellerTabakballenBlock;
+import mett.palemannie.tabakmod.block.custom.MittlererTabakballenBlock;
+import mett.palemannie.tabakmod.block.custom.TabakBallenBlock;
 import mett.palemannie.tabakmod.item.ModItems;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -27,17 +38,17 @@ public class ModBlocks {
         registerBlockItem(name, toReturn);
         return toReturn;
     }
-    public static final RegistryObject<Block> DRIED_TOBACCO_BALE = registerBlock("getrockneter_tabakballen",
-            () -> new FermentingTobaccoBlock(FermentingTobacco.FermentState.DRIED,BlockBehaviour.Properties.of(Material.LEAVES)
+    public static final RegistryObject<Block> GETROCKNETER_TABAKBALLEN = registerBlock("getrockneter_tabakballen",
+            () -> new TabakBallenBlock(BlockBehaviour.Properties.of(Material.LEAVES)
+                .strength(0.5F).sound(SoundType.GRASS)));
+    public static final RegistryObject<Block> HELLER_TABAKBALLEN = registerBlock("heller_tabakballen",
+            () -> new HellerTabakballenBlock(BlockBehaviour.Properties.of(Material.LEAVES)
                     .strength(0.5F).sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> LIGHT_TOBACCO_BALE = registerBlock("heller_tabakballen",
-            () -> new FermentingTobaccoBlock(FermentingTobacco.FermentState.LIGHT, BlockBehaviour.Properties.of(Material.LEAVES)
+    public static final RegistryObject<Block> MITTLERER_TABAKBALLEN = registerBlock("mittlerer_tabakballen",
+            () -> new MittlererTabakballenBlock(BlockBehaviour.Properties.of(Material.LEAVES)
                     .strength(0.5F).sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> MEDIUM_TOBACCO_BALE = registerBlock("mittlerer_tabakballen",
-            () -> new FermentingTobaccoBlock(FermentingTobacco.FermentState.MEDIUM,BlockBehaviour.Properties.of(Material.LEAVES)
-                    .strength(0.5F).sound(SoundType.GRASS)));
-    public static final RegistryObject<Block> DARK_TOBACCO_BALE = registerBlock("dunkler_tabakballen",
-            () -> new FermentingTobaccoBlock(FermentingTobacco.FermentState.DARK,BlockBehaviour.Properties.of(Material.LEAVES)
+    public static final RegistryObject<Block> DUNKLER_TABAKBALLEN = registerBlock("dunkler_tabakballen",
+            () -> new DunklerTabakballenBlock(BlockBehaviour.Properties.of(Material.LEAVES)
                     .strength(0.5F).sound(SoundType.GRASS)));
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
