@@ -14,8 +14,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class TabakBallenBlock extends Block {
-    public TabakBallenBlock(Properties p_49795_) {
+public class MittlererTabakBallenBlock extends Block {
+    public MittlererTabakBallenBlock(Properties p_49795_) {
         super(p_49795_);
     }
     //------------------------------------------------------------------------------------------------------------------
@@ -36,7 +36,7 @@ public class TabakBallenBlock extends Block {
     public void fallOn(Level level, BlockState blockState, BlockPos blockPos, Entity entity, float v) {
         entity.causeFallDamage(v, 0.5f, level.damageSources().fall());
     }
-    //------------------------------------------------------------------------------------------------------------------,
+    //------------------------------------------------------------------------------------------------------------------
 
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
@@ -50,7 +50,7 @@ public class TabakBallenBlock extends Block {
                 level.getRawBrightness(pos.south(),0)<=5 &&
                 level.getRawBrightness(pos.west(),0)<=5 &&
                 level.getRawBrightness(pos.below(),0)<=5){
-        level.addParticle(ParticleTypes.SMOKE, pos.getX()+0.5d, pos.getY()+0.5d, pos.getZ()+0.5d, dx, dy, dz);
+            level.addParticle(ParticleTypes.SMOKE, pos.getX()+0.5d, pos.getY()+0.5d, pos.getZ()+0.5d, dx, dy, dz);
         }
         super.animateTick(state, level, pos, random);
     }
@@ -69,10 +69,10 @@ public class TabakBallenBlock extends Block {
                 level.getRawBrightness(pos.south(),0)<=5 &&
                 level.getRawBrightness(pos.west(),0)<=5 &&
                 level.getRawBrightness(pos.below(),0)<=5) {
-            level.setBlockAndUpdate(pos, ModBlocks.HELLER_TABAKBALLEN.get().defaultBlockState());
-            level.playSound(null,pos, SoundEvents.COMPOSTER_READY, SoundSource.BLOCKS,1f, 1.5f);
-            }
-            super.randomTick(state, level, pos, random);
+            level.setBlockAndUpdate(pos, ModBlocks.DUNKLER_TABAKBALLEN.get().defaultBlockState());
+            level.playSound(null,pos, SoundEvents.COMPOSTER_READY, SoundSource.BLOCKS,1f, 0.5f);
+        }
+        super.randomTick(state, level, pos, random);
     }
     //------------------------------------------------------------------------------------------------------------------
 }
