@@ -1,6 +1,7 @@
 package mett.palemannie.tabakmod.item;
 
 import mett.palemannie.tabakmod.TabakMod;
+import mett.palemannie.tabakmod.block.ModBlocks;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
@@ -16,7 +17,7 @@ public class ModCreativeModeTabs {
     @SubscribeEvent
     public static void registerCreativeModeTabs(CreativeModeTabEvent.Register event){
         TABAK_TAB = event.registerCreativeModeTab(new ResourceLocation(TabakMod.MODID, "tabak_tab"),
-                builder -> builder.icon(() -> new ItemStack(ModItems.GETROCKNETER_TABAKBLATT.get()))
+                builder -> builder.icon(() -> new ItemStack(ModBlocks.HELLER_TABAKBALLEN.get()))
                         .title(Component.translatable("creativemodetab.tabak_tab")));
     }
 }

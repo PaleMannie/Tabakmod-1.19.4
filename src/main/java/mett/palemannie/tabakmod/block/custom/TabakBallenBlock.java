@@ -72,7 +72,7 @@ public class TabakBallenBlock extends Block {
             level.setBlockAndUpdate(pos, ModBlocks.HELLER_TABAKBALLEN.get().defaultBlockState());
             level.playSound(null,pos, SoundEvents.COMPOSTER_READY, SoundSource.BLOCKS,1f, 1.5f);
             }
-            super.randomTick(state, level, pos, random);
+        super.randomTick(state, level, pos, random);
     }
     //------------------------------------------------------------------------------------------------------------------
 }

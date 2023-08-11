@@ -54,18 +54,10 @@ public class TabakMod
 
         if(event.getTab() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.TABAKSAMEN);
-            event.accept(ModItems.GETROCKNETER_TABAKBLATT);
-            event.accept(ModItems.FAST_GETROCKNETER_TABAKBLATT);
-            event.accept(ModItems.HALB_GETROCKNETER_TABAKBLATT);
-            event.accept(ModItems.LEICHT_GETROCKNETER_TABAKBLATT);
-            event.accept(ModItems.ROHER_TABAKBLATT);
+
         }
         if(event.getTab() == ModCreativeModeTabs.TABAK_TAB) {
-                event.accept(ModItems.GETROCKNETER_TABAKBLATT);
-                event.accept(ModItems.FAST_GETROCKNETER_TABAKBLATT);
-                event.accept(ModItems.HALB_GETROCKNETER_TABAKBLATT);
-                event.accept(ModItems.LEICHT_GETROCKNETER_TABAKBLATT);
-                event.accept(ModItems.ROHER_TABAKBLATT);
+
                 event.accept(ModItems.TABAKSAMEN);
                 event.accept(ModBlocks.GETROCKNETER_TABAKBALLEN);
                 event.accept(ModBlocks.HELLER_TABAKBALLEN);
