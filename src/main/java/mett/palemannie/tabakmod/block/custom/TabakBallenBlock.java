@@ -34,7 +34,7 @@ public class TabakBallenBlock extends Block {
 
     @Override
     public void fallOn(Level level, BlockState blockState, BlockPos blockPos, Entity entity, float v) {
-        entity.causeFallDamage(v, 0.5f, level.damageSources().fall());
+        entity.causeFallDamage(v, 0.6f, level.damageSources().fall());
     }
     //------------------------------------------------------------------------------------------------------------------,
 
