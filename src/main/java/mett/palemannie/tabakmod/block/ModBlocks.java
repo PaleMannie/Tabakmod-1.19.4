@@ -1,10 +1,7 @@
 package mett.palemannie.tabakmod.block;
 
 import mett.palemannie.tabakmod.TabakMod;
-import mett.palemannie.tabakmod.block.custom.DunklerTabakBallenBlock;
-import mett.palemannie.tabakmod.block.custom.HellerTabakBallenBlock;
-import mett.palemannie.tabakmod.block.custom.MittlererTabakBallenBlock;
-import mett.palemannie.tabakmod.block.custom.TabakBallenBlock;
+import mett.palemannie.tabakmod.block.custom.*;
 import mett.palemannie.tabakmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -29,6 +26,11 @@ public class ModBlocks {
         registerBlockItem(name, toReturn);
         return toReturn;
     }
+
+    public static final RegistryObject<Block> GETROCKNETER_TABAKBLATT = registerBlock("getrockneter_tabakblatt",
+            () -> new GetrTabakblattBlock(BlockBehaviour.Properties.of(Material.LEAVES)
+                    .sound(SoundType.VINE).instabreak().noOcclusion()));
+
     public static final RegistryObject<Block> GETROCKNETER_TABAKBALLEN = registerBlock("getrockneter_tabakballen",
             () -> new TabakBallenBlock(BlockBehaviour.Properties.of(Material.LEAVES)
                 .strength(0.5F).sound(SoundType.GRASS)));

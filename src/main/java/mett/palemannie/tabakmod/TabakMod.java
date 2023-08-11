@@ -59,6 +59,9 @@ public class TabakMod
         if(event.getTab() == ModCreativeModeTabs.TABAK_TAB) {
 
                 event.accept(ModItems.TABAKSAMEN);
+
+                event.accept(ModBlocks.GETROCKNETER_TABAKBLATT);
+
                 event.accept(ModBlocks.GETROCKNETER_TABAKBALLEN);
                 event.accept(ModBlocks.HELLER_TABAKBALLEN);
                 event.accept(ModBlocks.MITTLERER_TABAKBALLEN);

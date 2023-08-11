@@ -1,11 +1,12 @@
 {
   "item.tabakmod.tabaksamen": "Tabaksamen",
 
-
+  "block.tabakmod.getrockneter_tabakblatt": "Getrockneter Tabakblatt",
 
   "block.tabakmod.getrockneter_tabakballen": "Getrockneter Tabakballen",
   "block.tabakmod.heller_tabakballen": "Heller Tabakballen",
   "block.tabakmod.mittlerer_tabakballen": "Mittlerer Tabakballen",
   "block.tabakmod.dunkler_tabakballen": "Dunkler Tabakballen",
+
   "creativemodetab.tabak_tab": "Super Tabakmod"
 }
