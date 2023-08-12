@@ -21,7 +21,7 @@ public class GetrTabakblattBlock extends HorizontalDirectionalBlock {
     public GetrTabakblattBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
     }
-
+//l
     public static final VoxelShape SHAPE = Block.box(0.5d,0d,0.5d, 15.5d, 1d, 15.5d);
 
     @Override
