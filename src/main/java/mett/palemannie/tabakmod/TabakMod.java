@@ -61,6 +61,10 @@ public class TabakMod
                 event.accept(ModItems.TABAKSAMEN);
 
                 event.accept(ModBlocks.GETROCKNETER_TABAKBLATT);
+                event.accept(ModBlocks.FAST_GETROCKNETER_TABAKBLATT);
+                event.accept(ModBlocks.HALB_GETROCKNETER_TABAKBLATT);
+                event.accept(ModBlocks.LEICHT_GETROCKNETER_TABAKBLATT);
+                event.accept(ModBlocks.TABAKBLATT);
 
                 event.accept(ModBlocks.GETROCKNETER_TABAKBALLEN);
                 event.accept(ModBlocks.HELLER_TABAKBALLEN);

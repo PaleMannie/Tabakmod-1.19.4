@@ -2,6 +2,10 @@
   "item.tabakmod.tabaksamen": "Tobacco Seeds",
 
   "block.tabakmod.getrockneter_tabakblatt": "Dried Tobacco Leaf",
+  "block.tabakmod.fast_getrockneter_tabakblatt": "Nearly dried Tobacco Leaf",
+  "block.tabakmod.halb_getrockneter_tabakblatt": "Half dried Tobacco Leaf",
+  "block.tabakmod.leicht_getrockneter_tabakblatt": "Lightly dried Tobacco Leaf",
+  "block.tabakmod.tabakblatt": "Tobacco Leaf",
 
   "block.tabakmod.getrockneter_tabakballen": "Dried Tobacco Bale",
   "block.tabakmod.heller_tabakballen": "Bright Tobacco Bale",

@@ -28,7 +28,19 @@ public class ModBlocks {
     }
 
     public static final RegistryObject<Block> GETROCKNETER_TABAKBLATT = registerBlock("getrockneter_tabakblatt",
-            () -> new GetrTabakblattBlock(BlockBehaviour.Properties.of(Material.LEAVES)
+            () -> new GetrTabakblattBlock(BlockBehaviour.Properties.of(Material.PLANT)
+                    .sound(SoundType.VINE).instabreak().noOcclusion()));
+    public static final RegistryObject<Block> FAST_GETROCKNETER_TABAKBLATT = registerBlock("fast_getrockneter_tabakblatt",
+            () -> new FstGetrTabakblattBlock(BlockBehaviour.Properties.of(Material.PLANT)
+                    .sound(SoundType.VINE).instabreak().noOcclusion()));
+    public static final RegistryObject<Block> HALB_GETROCKNETER_TABAKBLATT = registerBlock("halb_getrockneter_tabakblatt",
+            () -> new HlbGetrTabakblattBlock(BlockBehaviour.Properties.of(Material.PLANT)
+                    .sound(SoundType.VINE).instabreak().noOcclusion()));
+    public static final RegistryObject<Block> LEICHT_GETROCKNETER_TABAKBLATT = registerBlock("leicht_getrockneter_tabakblatt",
+            () -> new LchtGetrTabakBlattBlock(BlockBehaviour.Properties.of(Material.PLANT)
+                    .sound(SoundType.VINE).instabreak().noOcclusion()));
+    public static final RegistryObject<Block> TABAKBLATT = registerBlock("tabakblatt",
+            () -> new TabakBlattBlock(BlockBehaviour.Properties.of(Material.PLANT)
                     .sound(SoundType.VINE).instabreak().noOcclusion()));
 
     public static final RegistryObject<Block> GETROCKNETER_TABAKBALLEN = registerBlock("getrockneter_tabakballen",

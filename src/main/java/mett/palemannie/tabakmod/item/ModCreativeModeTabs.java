@@ -17,7 +17,7 @@ public class ModCreativeModeTabs {
     @SubscribeEvent
     public static void registerCreativeModeTabs(CreativeModeTabEvent.Register event){
         TABAK_TAB = event.registerCreativeModeTab(new ResourceLocation(TabakMod.MODID, "tabak_tab"),
-                builder -> builder.icon(() -> new ItemStack(ModBlocks.HELLER_TABAKBALLEN.get()))
+                builder -> builder.icon(() -> new ItemStack(ModBlocks.GETROCKNETER_TABAKBLATT.get()))
                         .title(Component.translatable("creativemodetab.tabak_tab")));
     }
 }

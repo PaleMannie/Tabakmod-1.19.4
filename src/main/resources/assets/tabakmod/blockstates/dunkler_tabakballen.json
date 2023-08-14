@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "tabakmod:block/dunkler_tabakballen"}
+    "": {
+      "model": "tabakmod:block/dunkler_tabakballen"
+    }
   }
 }

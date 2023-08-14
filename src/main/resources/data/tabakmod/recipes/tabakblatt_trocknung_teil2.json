@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 800,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "tabakmod:halb_getrockneter_tabakblatt"
+  },
+  "result": "tabakmod:getrockneter_tabakblatt"
+}

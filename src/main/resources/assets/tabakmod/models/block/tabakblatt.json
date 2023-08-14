@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "tabakmod:block/getrockneter_tabakblatt",
-		"particle": "tabakmod:block/getrockneter_tabakblatt"
+		"0": "tabakmod:block/tabakblatt",
+		"particle": "tabakmod:block/tabakblatt"
 	},
 	"elements": [
 		{
