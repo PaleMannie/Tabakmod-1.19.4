@@ -53,14 +53,14 @@ public class TabakBlattBlock extends Block {
     @Override
     public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) { return 120; }
     //------------------------------------------------------------------------------------------------------------------
-//linux IDE push test
+
     @Override
     public boolean isRandomlyTicking(BlockState pState) { return true; }
 
     @Override
     public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
         float chance = 0.075f;
-        if(chance >= pRandom.nextFloat() && pLevel.isDay() && pLevel.canSeeSky(pPos)){
+        if(chance >= pRandom.nextFloat() && pLevel.isDay() && pLevel.canSeeSky(pPos) && !pLevel.isRaining()){
             pLevel.setBlockAndUpdate(pPos, ModBlocks.LEICHT_GETROCKNETER_TABAKBLATT.get().defaultBlockState());
             pLevel.playSound(null, pPos, SoundEvents.LEASH_KNOT_BREAK, SoundSource.BLOCKS,1f,1f);
         }
@@ -72,7 +72,7 @@ public class TabakBlattBlock extends Block {
         float chance = 0.2f;
         float px = pRandom.nextFloat();
         float pz = pRandom.nextFloat();
-        if(chance >= pRandom.nextFloat() && pLevel.isDay() && pLevel.canSeeSky(pPos)){
+        if(chance >= pRandom.nextFloat() && pLevel.isDay() && pLevel.canSeeSky(pPos) && !pLevel.isRaining()){
             pLevel.addParticle(ParticleTypes.CRIT, pPos.getX()+px, pPos.getY()+0.05f, pPos.getZ()+pz, 0, 0.2d, 0);
         }
         super.animateTick(pState, pLevel, pPos, pRandom);

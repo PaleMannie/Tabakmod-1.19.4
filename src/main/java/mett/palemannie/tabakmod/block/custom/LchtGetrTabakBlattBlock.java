@@ -60,7 +60,7 @@ public class LchtGetrTabakBlattBlock extends Block {
     @Override
     public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
         float chance = 0.075f;
-        if(chance >= pRandom.nextFloat() && pLevel.isDay() && pLevel.canSeeSky(pPos)){
+        if(chance >= pRandom.nextFloat() && pLevel.isDay() && pLevel.canSeeSky(pPos) && !pLevel.isRaining()){
             pLevel.setBlockAndUpdate(pPos, ModBlocks.HALB_GETROCKNETER_TABAKBLATT.get().defaultBlockState());
             pLevel.playSound(null, pPos, SoundEvents.LEASH_KNOT_BREAK, SoundSource.BLOCKS,1f,1f);
         }
@@ -73,7 +73,7 @@ public class LchtGetrTabakBlattBlock extends Block {
         float chance = 0.2f;
         float px = pRandom.nextFloat();
         float pz = pRandom.nextFloat();
-        if(chance >= pRandom.nextFloat() && pLevel.isDay() && pLevel.canSeeSky(pPos)){
+        if(chance >= pRandom.nextFloat() && pLevel.isDay() && pLevel.canSeeSky(pPos) && !pLevel.isRaining()){
             pLevel.addParticle(ParticleTypes.CRIT, pPos.getX()+px, pPos.getY()+0.05f, pPos.getZ()+pz, 0, 0.2d, 0);
         }
         super.animateTick(pState, pLevel, pPos, pRandom);
