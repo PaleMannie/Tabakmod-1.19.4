@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone",
+          "name": "tabakmod:mittlerer_tabak",
           "conditions": [
             {
               "condition": "minecraft:match_tool",

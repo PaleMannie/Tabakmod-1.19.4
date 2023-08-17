@@ -1,6 +1,11 @@
 {
   "item.tabakmod.tabaksamen": "Tabaksamen",
 
+  "item.tabakmod.trockener_tabak": "Trockener Tabak",
+  "item.tabakmod.heller_tabak": "Heller Tabak",
+  "item.tabakmod.mittlerer_tabak": "Mittlerer Tabak",
+  "item.tabakmod.dunkler_tabak": "Dunkler Tabak",
+
   "block.tabakmod.getrockneter_tabakblatt": "Getrocknete Tabakblätter",
   "block.tabakmod.fast_getrockneter_tabakblatt": "Fast getrocknete Tabakblätter",
   "block.tabakmod.halb_getrockneter_tabakblatt": "Halb getrocknete Tabakblatter",

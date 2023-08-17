@@ -14,6 +14,14 @@ public class ModItems
 
     public static final RegistryObject<Item> TABAKSAMEN = ITEMS.register("tabaksamen",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TROCKENER_TABAK = ITEMS.register("trockener_tabak",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> HELLER_TABAK = ITEMS.register("heller_tabak",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MITTLERER_TABAK = ITEMS.register("mittlerer_tabak",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DUNKLER_TABAK = ITEMS.register("dunkler_tabak",
+            () -> new Item(new Item.Properties()));
     public static void register(IEventBus eventBus)
     {
     ITEMS.register(eventBus);
