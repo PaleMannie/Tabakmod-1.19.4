@@ -5,7 +5,8 @@ import mett.palemannie.tabakmod.block.ModBlocks;
 import mett.palemannie.tabakmod.item.ModCreativeModeTabs;
 import mett.palemannie.tabakmod.item.ModItems;
 import mett.palemannie.tabakmod.loot.ModLootModifiers;
-import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -16,7 +17,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-// Oi mate!
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(TabakMod.MODID)
@@ -39,31 +39,30 @@ public class TabakMod
 
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+    private void commonSetup(final FMLCommonSetupEvent event) {
     }
 
-    private void addCreative(CreativeModeTabEvent.BuildContents event)
-    {
+    private void addCreative(CreativeModeTabEvent.BuildContents event) {
         if(event.getTab() == ModCreativeModeTabs.TABAK_TAB) {
 
-                event.accept(ModItems.TABAKSAMEN);
+            event.accept(ModItems.TABAKSAMEN);
+            event.accept(ModItems.TABAKBLATT);
 
-                event.accept(ModItems.TROCKENER_TABAK);
-                event.accept(ModItems.HELLER_TABAK);
-                event.accept(ModItems.MITTLERER_TABAK);
-                event.accept(ModItems.DUNKLER_TABAK);
+            event.accept(ModItems.TROCKENER_TABAK);
+            event.accept(ModItems.HELLER_TABAK);
+            event.accept(ModItems.MITTLERER_TABAK);
+            event.accept(ModItems.DUNKLER_TABAK);
 
-                event.accept(ModBlocks.TABAKBLATT);
-                event.accept(ModBlocks.LEICHT_GETROCKNETER_TABAKBLATT);
-                event.accept(ModBlocks.HALB_GETROCKNETER_TABAKBLATT);
-                event.accept(ModBlocks.FAST_GETROCKNETER_TABAKBLATT);
-                event.accept(ModBlocks.GETROCKNETER_TABAKBLATT);
+            event.accept(ModBlocks.ROHER_TABAKBLATT);
+            event.accept(ModBlocks.LEICHT_GETROCKNETER_TABAKBLATT);
+            event.accept(ModBlocks.HALB_GETROCKNETER_TABAKBLATT);
+            event.accept(ModBlocks.FAST_GETROCKNETER_TABAKBLATT);
+            event.accept(ModBlocks.GETROCKNETER_TABAKBLATT);
 
-                event.accept(ModBlocks.GETROCKNETER_TABAKBALLEN);
-                event.accept(ModBlocks.HELLER_TABAKBALLEN);
-                event.accept(ModBlocks.MITTLERER_TABAKBALLEN);
-                event.accept(ModBlocks.DUNKLER_TABAKBALLEN);
+            event.accept(ModBlocks.GETROCKNETER_TABAKBALLEN);
+            event.accept(ModBlocks.HELLER_TABAKBALLEN);
+            event.accept(ModBlocks.MITTLERER_TABAKBALLEN);
+            event.accept(ModBlocks.DUNKLER_TABAKBALLEN);
 
         }
 
@@ -71,11 +70,10 @@ public class TabakMod
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
+    public static class ClientModEvents {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.TABAKPFLANZE.get(), RenderType.cutout());
         }
     }
 }

@@ -1,3 +1,6 @@
 {
-  "parent" : "tabakmod:block/tabakblatt"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tabakmod:item/tabakblatt"
+  }
 }

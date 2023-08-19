@@ -5,12 +5,14 @@
   "item.tabakmod.heller_tabak": "Heller Tabak",
   "item.tabakmod.mittlerer_tabak": "Mittlerer Tabak",
   "item.tabakmod.dunkler_tabak": "Dunkler Tabak",
+  "item.tabakmod.tabakblatt": "Tabakblatt",
 
+  "block.tabakmod.tabakpflanze": "Tabakpflanze",
   "block.tabakmod.getrockneter_tabakblatt": "Getrocknete Tabakblätter",
   "block.tabakmod.fast_getrockneter_tabakblatt": "Fast getrocknete Tabakblätter",
   "block.tabakmod.halb_getrockneter_tabakblatt": "Halb getrocknete Tabakblatter",
   "block.tabakmod.leicht_getrockneter_tabakblatt": "Leicht getrocknete Tabakblatter",
-  "block.tabakmod.tabakblatt": "Tabakblatter",
+  "block.tabakmod.roher_tabakblatt": "Tabakblätter",
 
   "block.tabakmod.getrockneter_tabakballen": "Getrockneter Tabakballen",
   "block.tabakmod.heller_tabakballen": "Heller Tabakballen",

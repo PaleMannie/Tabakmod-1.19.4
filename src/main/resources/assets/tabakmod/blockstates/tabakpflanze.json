@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "age=0": { "model": "tabakmod:block/tabakpflanze_stadium0" },
+    "age=1": { "model": "tabakmod:block/tabakpflanze_stadium1" },
+    "age=2": { "model": "tabakmod:block/tabakpflanze_stadium2" },
+    "age=3": { "model": "tabakmod:block/tabakpflanze_stadium3" },
+    "age=4": { "model": "tabakmod:block/tabakpflanze_stadium4" },
+    "age=5": { "model": "tabakmod:block/tabakpflanze_stadium5" },
+    "age=6": { "model": "tabakmod:block/tabakpflanze_stadium6" }
+  }
+}

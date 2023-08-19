@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tabakmod:tabakblatt"
+          "name": "tabakmod:roher_tabakblatt"
         }
       ],
       "rolls": 1.0

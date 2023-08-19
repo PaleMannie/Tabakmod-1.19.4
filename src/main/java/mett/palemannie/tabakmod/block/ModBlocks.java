@@ -6,6 +6,7 @@ import mett.palemannie.tabakmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -39,7 +40,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> LEICHT_GETROCKNETER_TABAKBLATT = registerBlock("leicht_getrockneter_tabakblatt",
             () -> new LchtGetrTabakBlattBlock(BlockBehaviour.Properties.of(Material.PLANT)
                     .sound(SoundType.VINE).instabreak().noOcclusion()));
-    public static final RegistryObject<Block> TABAKBLATT = registerBlock("tabakblatt",
+    public static final RegistryObject<Block> ROHER_TABAKBLATT = registerBlock("roher_tabakblatt",
             () -> new TabakBlattBlock(BlockBehaviour.Properties.of(Material.PLANT)
                     .sound(SoundType.VINE).instabreak().noOcclusion()));
 
@@ -55,6 +56,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> DUNKLER_TABAKBALLEN = registerBlock("dunkler_tabakballen",
             () -> new DunklerTabakBallenBlock(BlockBehaviour.Properties.of(Material.LEAVES)
                     .strength(0.5F).sound(SoundType.GRASS)));
+
+    public static final RegistryObject<Block> TABAKPFLANZE = BLOCKS.register("tabakpflanze",
+            () -> new TabakPflanzenBlock(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH)));
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),

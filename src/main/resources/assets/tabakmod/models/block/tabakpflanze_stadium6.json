@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "tabakmod:block/tabakpflanze_stadium6"
+  }
+}

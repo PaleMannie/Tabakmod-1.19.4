@@ -4,7 +4,7 @@
   "cookingtime": 800,
   "experience": 0.1,
   "ingredient": {
-    "item": "tabakmod:tabakblatt"
+    "item": "tabakmod:roher_tabakblatt"
   },
   "result": "tabakmod:halb_getrockneter_tabakblatt"
 }
