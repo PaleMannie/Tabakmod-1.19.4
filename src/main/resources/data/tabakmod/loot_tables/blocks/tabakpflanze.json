@@ -37,11 +37,36 @@
               "function": "minecraft:apply_bonus",
               "parameters": {
                 "extra": 3,
-                "probability": 0.5714286
+                "probability": 0.25
               }
             }
           ],
           "name": "tabakmod:tabakblatt"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "tabakmod:tabakpflanze",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "age": "6"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "tabakmod:tabaksamen"
         }
       ],
       "rolls": 1.0
