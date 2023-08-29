@@ -64,6 +64,10 @@ public class TabakMod
             event.accept(ModBlocks.MITTLERER_TABAKBALLEN);
             event.accept(ModBlocks.DUNKLER_TABAKBALLEN);
 
+            event.accept(ModItems.ZIGARETTE);
+            event.accept(ModItems.ZIGARETTENSTUMMEL);
+            event.accept(ModItems.ZIGARETTENFILTER);
+
         }
 
     }

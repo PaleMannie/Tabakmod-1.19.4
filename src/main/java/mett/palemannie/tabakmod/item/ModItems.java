@@ -2,6 +2,7 @@ package mett.palemannie.tabakmod.item;
 
 import mett.palemannie.tabakmod.TabakMod;
 import mett.palemannie.tabakmod.block.ModBlocks;
+import mett.palemannie.tabakmod.item.custom.ZigarettenItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,6 +26,13 @@ public class ModItems
     public static final RegistryObject<Item> MITTLERER_TABAK = ITEMS.register("mittlerer_tabak",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DUNKLER_TABAK = ITEMS.register("dunkler_tabak",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> ZIGARETTE = ITEMS.register("zigarette",
+            () -> new ZigarettenItem(new Item.Properties().durability(40)));
+    public static final RegistryObject<Item> ZIGARETTENSTUMMEL = ITEMS.register("zigarettenstummel",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ZIGARETTENFILTER = ITEMS.register("zigarettenfilter",
             () -> new Item(new Item.Properties()));
 
 

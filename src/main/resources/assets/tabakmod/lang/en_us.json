@@ -1,6 +1,10 @@
 {
   "item.tabakmod.tabaksamen": "Tobacco Seeds",
 
+  "item.tabakmod.zigarette": "Cigarette",
+  "item.tabakmod.zigarettenfilter": "Cigarette Filter",
+  "item.tabakmod.zigarettenstummel": "Cigarette Butt",
+
   "item.tabakmod.trockener_tabak": "Dried Tobacco",
   "item.tabakmod.heller_tabak": "Bright Tobacco",
   "item.tabakmod.mittlerer_tabak": "Medium Tobacco",
