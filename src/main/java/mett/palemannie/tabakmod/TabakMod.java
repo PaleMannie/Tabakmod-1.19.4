@@ -67,6 +67,9 @@ public class TabakMod
             event.accept(ModItems.ZIGARETTE);
             event.accept(ModItems.ZIGARETTENSTUMMEL);
             event.accept(ModItems.ZIGARETTENFILTER);
+            event.accept(ModItems.ZIGARETTENBUENDEL);
+            event.accept(ModItems.ZIGARETTENSCHACHTEL);
+            event.accept(ModItems.ZIGARETTENSCHACHTEL_GROSS);
 
         }
 

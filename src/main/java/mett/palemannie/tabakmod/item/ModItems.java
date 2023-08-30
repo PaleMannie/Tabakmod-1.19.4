@@ -2,6 +2,8 @@ package mett.palemannie.tabakmod.item;
 
 import mett.palemannie.tabakmod.TabakMod;
 import mett.palemannie.tabakmod.block.ModBlocks;
+import mett.palemannie.tabakmod.item.custom.StummelItem;
+import mett.palemannie.tabakmod.item.custom.ZigSchachtelItem;
 import mett.palemannie.tabakmod.item.custom.ZigarettenItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -14,7 +16,7 @@ public class ModItems
 {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, TabakMod.MODID);
-
+////////////////////////////////////////////////TABAKGEWAECHS////////////////////////////////////////////////////////////////////////
     public static final RegistryObject<Item> TABAKSAMEN = ITEMS.register("tabaksamen",
             () -> new ItemNameBlockItem(ModBlocks.TABAKPFLANZE.get(),new Item.Properties()));
     public static final RegistryObject<Item> TABAKBLATT = ITEMS.register("tabakblatt",
@@ -27,14 +29,19 @@ public class ModItems
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DUNKLER_TABAK = ITEMS.register("dunkler_tabak",
             () -> new Item(new Item.Properties()));
-
+/////////////////////////////////////////////////TABAKPRODUKTE///////////////////////////////////////////////////////////////////////
     public static final RegistryObject<Item> ZIGARETTE = ITEMS.register("zigarette",
-            () -> new ZigarettenItem(new Item.Properties().durability(40)));
+            () -> new ZigarettenItem(new Item.Properties().durability(200)));
     public static final RegistryObject<Item> ZIGARETTENSTUMMEL = ITEMS.register("zigarettenstummel",
-            () -> new Item(new Item.Properties()));
+            () -> new StummelItem(new Item.Properties()));
     public static final RegistryObject<Item> ZIGARETTENFILTER = ITEMS.register("zigarettenfilter",
+            () -> new StummelItem(new Item.Properties()));
+    public static final RegistryObject<Item> ZIGARETTENBUENDEL = ITEMS.register("zigarettenbuendel",
             () -> new Item(new Item.Properties()));
-
+    public static final RegistryObject<Item> ZIGARETTENSCHACHTEL = ITEMS.register("zigarettenschachtel",
+            () -> new ZigSchachtelItem(new Item.Properties().durability(20)));
+    public static final RegistryObject<Item> ZIGARETTENSCHACHTEL_GROSS = ITEMS.register("zigarettenschachtel_gross",
+            () -> new ZigSchachtelItem(new Item.Properties().durability(30)));
 
     public static void register(IEventBus eventBus)
     {

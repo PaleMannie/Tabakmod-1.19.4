@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-     "layer0": "tabakmod:item/tabaksamen"
+     "layer0": "tabakmod:item/zigarettenschachtel_gross"
    }
 }
