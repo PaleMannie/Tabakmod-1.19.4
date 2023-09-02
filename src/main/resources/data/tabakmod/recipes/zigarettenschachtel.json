@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tabakmod:zigarettenschachtel_leer"
+    },
+    {
+      "item": "tabakmod:zigaretten"
+    },
+    {
+      "item": "tabakmod:zigaretten"
+    }
+
+  ],
+  "result": {
+    "count": 1,
+    "item": "tabakmod:zigarettenschachtel"
+  }
+}

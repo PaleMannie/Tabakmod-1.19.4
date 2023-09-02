@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-     "layer0": "tabakmod:item/trockener_tabak"
+     "layer0": "tabakmod:item/dunkler_tabak_behandelt"
    }
 }

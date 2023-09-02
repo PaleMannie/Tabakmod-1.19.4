@@ -29,6 +29,12 @@ public class ModItems
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DUNKLER_TABAK = ITEMS.register("dunkler_tabak",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> HELLER_TABAK_BEHANDELT = ITEMS.register("heller_tabak_behandelt",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MITTLERER_TABAK_BEHANDELT = ITEMS.register("mittlerer_tabak_behandelt",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DUNKLER_TABAK_BEHANDELT = ITEMS.register("dunkler_tabak_behandelt",
+            () -> new Item(new Item.Properties()));
 /////////////////////////////////////////////////TABAKPRODUKTE///////////////////////////////////////////////////////////////////////
     public static final RegistryObject<Item> ZIGARETTE = ITEMS.register("zigarette",
             () -> new ZigarettenItem(new Item.Properties().durability(200)));
@@ -36,12 +42,16 @@ public class ModItems
             () -> new StummelItem(new Item.Properties()));
     public static final RegistryObject<Item> ZIGARETTENFILTER = ITEMS.register("zigarettenfilter",
             () -> new StummelItem(new Item.Properties()));
-    public static final RegistryObject<Item> ZIGARETTENBUENDEL = ITEMS.register("zigarettenbuendel",
+    public static final RegistryObject<Item> ZIGARETTEN = ITEMS.register("zigaretten",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ZIGARETTENSCHACHTEL = ITEMS.register("zigarettenschachtel",
             () -> new ZigSchachtelItem(new Item.Properties().durability(20)));
+    public static final RegistryObject<Item> ZIGARETTENSCHACHTEL_LEER = ITEMS.register("zigarettenschachtel_leer",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ZIGARETTENSCHACHTEL_GROSS = ITEMS.register("zigarettenschachtel_gross",
             () -> new ZigSchachtelItem(new Item.Properties().durability(30)));
+    public static final RegistryObject<Item> ZIGARETTENSCHACHTEL_GROSS_LEER = ITEMS.register("zigarettenschachtel_gross_leer",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus)
     {

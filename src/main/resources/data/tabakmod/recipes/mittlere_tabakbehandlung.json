@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 50,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "tabakmod:mittlerer_tabak"
+  },
+  "result": "tabakmod:mittlerer_tabak_behandelt"
+}

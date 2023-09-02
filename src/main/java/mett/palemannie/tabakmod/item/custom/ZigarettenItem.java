@@ -19,6 +19,13 @@ import org.jetbrains.annotations.NotNull;
 public class ZigarettenItem extends Item {
     public ZigarettenItem(Properties pProperties) { super(pProperties); }
 ////////////////////////////////////////////////EIGENE METHODEN////////////////////////////////////////////////////////////////////////
+    void exhaliere (Level level, Player player){
+        Vec3 MausPos = player.getEyePosition();
+        Vec3 SchauWinkel = player.getLookAngle();
+        level.addParticle(ParticleTypes.SMOKE,
+                MausPos.x, MausPos.y-0.15d, MausPos.z,
+                SchauWinkel.x/10, SchauWinkel.y/10, SchauWinkel.z/10);
+    }
     void paffe(Level level, Player player){
         Vec3 MausPos = player.getEyePosition();
         Vec3 SchauWinkel = player.getLookAngle();
@@ -51,15 +58,11 @@ public class ZigarettenItem extends Item {
     public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pRemainingUseDuration) {
         super.onUseTick(pLevel, pLivingEntity, pStack, pRemainingUseDuration);
         if(pLivingEntity instanceof Player pPlayer && (pRemainingUseDuration <= getUseDuration(pStack) - 15)) {
-            Vec3 MausPos = pPlayer.getEyePosition();
-            Vec3 SchauWinkel = pPlayer.getLookAngle();
-            pLevel.addParticle(ParticleTypes.SMOKE,
-                    MausPos.x, MausPos.y-0.15d, MausPos.z,
-                    SchauWinkel.x/10, SchauWinkel.y/10, SchauWinkel.z/10);
+            exhaliere(pLevel,pPlayer);
             pStack.hurtAndBreak(1, pPlayer, p -> {
                 gibRauchStandardEffekte(pPlayer);
                 ItemStack itemstack = new ItemStack(ModItems.ZIGARETTENSTUMMEL.get());
-                p.drop(itemstack,false);
+                p.drop(itemstack,true);
             });
         if(pStack.getDamageValue() >= pStack.getMaxDamage()-1){
             paffe(pLevel,pPlayer);

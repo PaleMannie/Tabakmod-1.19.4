@@ -49,6 +49,9 @@ public class TabakMod
             event.accept(ModItems.TABAKBLATT);
 
             event.accept(ModItems.TROCKENER_TABAK);
+            event.accept(ModItems.HELLER_TABAK_BEHANDELT);
+            event.accept(ModItems.MITTLERER_TABAK_BEHANDELT);
+            event.accept(ModItems.DUNKLER_TABAK_BEHANDELT);
             event.accept(ModItems.HELLER_TABAK);
             event.accept(ModItems.MITTLERER_TABAK);
             event.accept(ModItems.DUNKLER_TABAK);
@@ -65,11 +68,13 @@ public class TabakMod
             event.accept(ModBlocks.DUNKLER_TABAKBALLEN);
 
             event.accept(ModItems.ZIGARETTE);
-            event.accept(ModItems.ZIGARETTENSTUMMEL);
+            event.accept(ModItems.ZIGARETTEN);
             event.accept(ModItems.ZIGARETTENFILTER);
-            event.accept(ModItems.ZIGARETTENBUENDEL);
+            event.accept(ModItems.ZIGARETTENSTUMMEL);
             event.accept(ModItems.ZIGARETTENSCHACHTEL);
+            event.accept(ModItems.ZIGARETTENSCHACHTEL_LEER);
             event.accept(ModItems.ZIGARETTENSCHACHTEL_GROSS);
+            event.accept(ModItems.ZIGARETTENSCHACHTEL_GROSS_LEER);
 
         }
 
