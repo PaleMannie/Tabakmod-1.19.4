@@ -2,13 +2,18 @@
   "item.tabakmod.tabaksamen": "Tobacco Seeds",
 
   "item.tabakmod.zigarette": "Cigarette",
+  "item.tabakmod.zigarre": "Cigar",
   "item.tabakmod.zigarettenfilter": "Cigarette Filter",
   "item.tabakmod.zigarettenstummel": "Cigarette Butt",
+  "item.tabakmod.zigarrenstummel": "Cigar Butt",
   "item.tabakmod.zigaretten": "Cigarettes",
+  "item.tabakmod.zigarren": "Cigars",
   "item.tabakmod.zigarettenschachtel": "Cigarette Pack",
   "item.tabakmod.zigarettenschachtel_leer": "Empty Cigarette Pack",
   "item.tabakmod.zigarettenschachtel_gross": "Big Cigarette Pack",
   "item.tabakmod.zigarettenschachtel_gross_leer": "Big Empty Cigarette Pack",
+  "item.tabakmod.zigarrenschachtel": "Cigar Box",
+  "item.tabakmod.zigarrenschachtel_leer": "Empty Cigar Box",
 
 
   "item.tabakmod.trockener_tabak": "Dried Tobacco",
@@ -19,6 +24,7 @@
   "item.tabakmod.mittlerer_tabak_behandelt": "Treated Medium Tobacco",
   "item.tabakmod.dunkler_tabak_behandelt": "Treated Dark Tobacco",
   "item.tabakmod.tabakblatt": "Tobacco Leaf",
+  "item.tabakmod.deckblatt": "Wrapper Leaf",
 
   "block.tabakmod.tabakpflanze": "Tobacco Plant",
   "block.tabakmod.getrockneter_tabakblatt": "Dried Tobacco Leaves",

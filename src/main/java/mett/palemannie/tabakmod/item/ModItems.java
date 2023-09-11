@@ -2,9 +2,7 @@ package mett.palemannie.tabakmod.item;
 
 import mett.palemannie.tabakmod.TabakMod;
 import mett.palemannie.tabakmod.block.ModBlocks;
-import mett.palemannie.tabakmod.item.custom.StummelItem;
-import mett.palemannie.tabakmod.item.custom.ZigSchachtelItem;
-import mett.palemannie.tabakmod.item.custom.ZigarettenItem;
+import mett.palemannie.tabakmod.item.custom.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -52,7 +50,18 @@ public class ModItems
             () -> new ZigSchachtelItem(new Item.Properties().durability(30)));
     public static final RegistryObject<Item> ZIGARETTENSCHACHTEL_GROSS_LEER = ITEMS.register("zigarettenschachtel_gross_leer",
             () -> new Item(new Item.Properties()));
-
+    public static final RegistryObject<Item> ZIGARRE = ITEMS.register("zigarre",
+            () -> new ZigarrenItem(new Item.Properties().durability(600)));
+    public static final RegistryObject<Item> ZIGARREN = ITEMS.register("zigarren",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ZIGARRENSTUMMEL = ITEMS.register("zigarrenstummel",
+            () -> new StummelItem(new Item.Properties()));
+    public static final RegistryObject<Item> ZIGARRENSCHACHTEL = ITEMS.register("zigarrenschachtel",
+            () -> new ZigrrSchachtelItem(new Item.Properties().durability(6)));
+    public static final RegistryObject<Item> ZIGARRENSCHACHTEL_LEER = ITEMS.register("zigarrenschachtel_leer",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DECKBLATT = ITEMS.register("deckblatt",
+            () -> new Item(new Item.Properties()));
     public static void register(IEventBus eventBus)
     {
     ITEMS.register(eventBus);
