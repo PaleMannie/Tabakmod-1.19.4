@@ -37,7 +37,7 @@
               "function": "minecraft:apply_bonus",
               "parameters": {
                 "extra": 3,
-                "probability": 0.25
+                "probability": 0.34
               }
             }
           ],

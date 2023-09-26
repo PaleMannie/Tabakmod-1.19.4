@@ -21,7 +21,7 @@ public class ZigrrSchachtelItem extends ZigSchachtelItem{
         stack.hurtAndBreak(1,pPlayer, p ->{
             if(this == ModItems.ZIGARRENSCHACHTEL.get()){
                 ItemStack z = new ItemStack(ModItems.ZIGARRENSCHACHTEL_LEER.get());
-                p.drop(z, false);
+                p.setItemInHand(pUsedHand,z);
             }
             p.stopUsingItem();
         });

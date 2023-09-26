@@ -38,5 +38,9 @@
   "block.tabakmod.mittlerer_tabakballen": "Medium Tobacco Bale",
   "block.tabakmod.dunkler_tabakballen": "Dark Tobacco Bale",
 
+  "block.tabakmod.aschenbecher": "Ash Tray",
+  "block.tabakmod.aschenbecher_zig": "Ash Tray with Cigarette",
+  "block.tabakmod.aschenbecher_zigrr": "Ash Tray with Cigar",
+
   "creativemodetab.tabak_tab": "Super Tobacco Mod"
 }

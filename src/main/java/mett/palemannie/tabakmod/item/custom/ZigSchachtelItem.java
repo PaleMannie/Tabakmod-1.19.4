@@ -25,11 +25,11 @@ public class ZigSchachtelItem extends Item {
         stack.hurtAndBreak(1,pPlayer, p ->{
             if(this == ModItems.ZIGARETTENSCHACHTEL.get()){
                 ItemStack z = new ItemStack(ModItems.ZIGARETTENSCHACHTEL_LEER.get());
-                p.drop(z, false);
+                p.setItemInHand(pUsedHand,z);
             }
             if(this == ModItems.ZIGARETTENSCHACHTEL_GROSS.get()){
                 ItemStack x = new ItemStack(ModItems.ZIGARETTENSCHACHTEL_GROSS_LEER.get());
-                p.drop(x, false);
+                p.setItemInHand(pUsedHand,x);
             }
             p.stopUsingItem();
         });

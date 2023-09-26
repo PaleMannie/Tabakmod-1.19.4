@@ -37,5 +37,9 @@
   "block.tabakmod.mittlerer_tabakballen": "Mittlerer Tabakballen",
   "block.tabakmod.dunkler_tabakballen": "Dunkler Tabakballen",
 
+  "block.tabakmod.aschenbecher": "Aschenbecher",
+  "block.tabakmod.aschenbecher_zig": "Aschenbecher mit Zigarette",
+  "block.tabakmod.aschenbecher_zigrr": "Aschenbecher mit Zigarre",
+
   "creativemodetab.tabak_tab": "Super Tabakmod"
 }

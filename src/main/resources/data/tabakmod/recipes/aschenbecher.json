@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "minecraft:stone"
+    }
+  },
+  "pattern": [
+    "S S",
+    "SSS"
+  ],
+  "result": {
+    "item": "tabakmod:aschenbecher"
+  },
+  "show_notification": true
+}

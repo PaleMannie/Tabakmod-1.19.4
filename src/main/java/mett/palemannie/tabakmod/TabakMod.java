@@ -82,6 +82,10 @@ public class TabakMod
             event.accept(ModItems.ZIGARRENSCHACHTEL_LEER);
             event.accept(ModItems.DECKBLATT);
 
+            event.accept(ModBlocks.ASCHENBECHER);
+            event.accept(ModBlocks.ASCHENBECHER_ZIG);
+            event.accept(ModBlocks.ASCHENBECHER_ZIGRR);
+
         }
 
     }
