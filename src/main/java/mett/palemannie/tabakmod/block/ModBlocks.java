@@ -65,6 +65,8 @@ public class ModBlocks {
             () -> new AschenbecherBlock(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.STONE).instabreak().noOcclusion()));
     public static final RegistryObject<Block> ASCHENBECHER_ZIGRR = registerBlock("aschenbecher_zigrr",
             () -> new AschenbecherBlock(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.STONE).instabreak().noOcclusion()));
+    public static final RegistryObject<Block> ASCHENBECHER_GROSS = registerBlock("aschenbecher_gross",
+            () -> new AschenbecherGrossBlock(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.STONE).instabreak().noOcclusion()));
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),

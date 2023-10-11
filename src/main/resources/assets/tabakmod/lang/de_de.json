@@ -40,6 +40,10 @@
   "block.tabakmod.aschenbecher": "Aschenbecher",
   "block.tabakmod.aschenbecher_zig": "Aschenbecher mit Zigarette",
   "block.tabakmod.aschenbecher_zigrr": "Aschenbecher mit Zigarre",
+  "block.tabakmod.aschenbecher_gross": "Großer Aschenbecher",
+
+
+  "entity.minecraft.villager.tabakmod.tabakhaendler": "Tabakhändler",
 
   "creativemodetab.tabak_tab": "Super Tabakmod"
 }

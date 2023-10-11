@@ -15,7 +15,6 @@
   "item.tabakmod.zigarrenschachtel": "Cigar Box",
   "item.tabakmod.zigarrenschachtel_leer": "Empty Cigar Box",
 
-
   "item.tabakmod.trockener_tabak": "Dried Tobacco",
   "item.tabakmod.heller_tabak": "Bright Tobacco",
   "item.tabakmod.mittlerer_tabak": "Medium Tobacco",
@@ -41,6 +40,9 @@
   "block.tabakmod.aschenbecher": "Ash Tray",
   "block.tabakmod.aschenbecher_zig": "Ash Tray with Cigarette",
   "block.tabakmod.aschenbecher_zigrr": "Ash Tray with Cigar",
+  "block.tabakmod.aschenbecher_gross": "Big Ash Tray",
+
+  "entity.minecraft.villager.tabakmod.tabakhaendler": "Tobacco Merchant",
 
   "creativemodetab.tabak_tab": "Super Tobacco Mod"
 }

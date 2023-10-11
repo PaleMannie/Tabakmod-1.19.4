@@ -46,7 +46,6 @@ public class ZigarettenItem extends Item {
         player.addEffect(new MobEffectInstance(MobEffects.SATURATION,2,0));
         player.addEffect(new MobEffectInstance(MobEffects.HARM,1,0));
     }
-
 ////////////////////////////////////////////////NUTZMETHODEN////////////////////////////////////////////////////////////////////////
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
@@ -96,7 +95,6 @@ public class ZigarettenItem extends Item {
             player.getCooldowns().addCooldown(this,12);
         }
     }
-
 ////////////////////////////////////////////////////SONSTIGE METHODEN////////////////////////////////////////////////////////////////////
     @Override
     public int getEntityLifespan(ItemStack itemStack, Level level) {

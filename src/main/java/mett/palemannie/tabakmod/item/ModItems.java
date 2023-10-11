@@ -14,7 +14,7 @@ public class ModItems
 {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, TabakMod.MODID);
-////////////////////////////////////////////////TABAKGEWAECHS////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////TABAKGEWÄCHS////////////////////////////////////////////////////////////////////////
     public static final RegistryObject<Item> TABAKSAMEN = ITEMS.register("tabaksamen",
             () -> new ItemNameBlockItem(ModBlocks.TABAKPFLANZE.get(),new Item.Properties()));
     public static final RegistryObject<Item> TABAKBLATT = ITEMS.register("tabakblatt",
@@ -62,6 +62,11 @@ public class ModItems
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DECKBLATT = ITEMS.register("deckblatt",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PFEIFE = ITEMS.register("pfeife",
+            () -> new PfeifenItem(new Item.Properties().durability(220)));
+    public static final RegistryObject<Item> PFEIFE_LEER = ITEMS.register("pfeife_leer",
+            () -> new LeerePfeifenItem(new Item.Properties()));
+
     public static void register(IEventBus eventBus)
     {
     ITEMS.register(eventBus);

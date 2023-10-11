@@ -5,6 +5,7 @@ import mett.palemannie.tabakmod.block.ModBlocks;
 import mett.palemannie.tabakmod.item.ModCreativeModeTabs;
 import mett.palemannie.tabakmod.item.ModItems;
 import mett.palemannie.tabakmod.loot.ModLootModifiers;
+import mett.palemannie.tabakmod.villager.ModVillagers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -36,10 +37,14 @@ public class TabakMod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModLootModifiers.register(modEventBus);
+        ModVillagers.register(modEventBus);
 
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork( ()-> {
+           ModVillagers.registerPOIs();
+        });
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
@@ -69,6 +74,8 @@ public class TabakMod
 
             event.accept(ModItems.ZIGARETTE);
             event.accept(ModItems.ZIGARRE);
+            event.accept(ModItems.PFEIFE);
+            event.accept(ModItems.PFEIFE_LEER);
             event.accept(ModItems.ZIGARETTEN);
             event.accept(ModItems.ZIGARREN);
             event.accept(ModItems.ZIGARETTENFILTER);
@@ -85,6 +92,7 @@ public class TabakMod
             event.accept(ModBlocks.ASCHENBECHER);
             event.accept(ModBlocks.ASCHENBECHER_ZIG);
             event.accept(ModBlocks.ASCHENBECHER_ZIGRR);
+            event.accept(ModBlocks.ASCHENBECHER_GROSS);
 
         }
 

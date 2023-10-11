@@ -36,7 +36,6 @@ public class AschenbecherBlock extends Block {
 
         if(!pLevel.isClientSide && (pHand == InteractionHand.MAIN_HAND || pHand == InteractionHand.OFF_HAND)){
         if(stack.is(ModItems.ZIGARETTE.get())){
-            System.out.println("CRUELTY SQUAD");
             pLevel.setBlockAndUpdate(pPos, ModBlocks.ASCHENBECHER_ZIG.get().defaultBlockState());
             if(pHand == InteractionHand.OFF_HAND){ pPlayer.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);}
             if(pHand == InteractionHand.MAIN_HAND){ pPlayer.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);}
@@ -45,7 +44,6 @@ public class AschenbecherBlock extends Block {
             return InteractionResult.SUCCESS;
          }
         if(stack.is(ModItems.ZIGARRE.get())){
-            System.out.println("CRUELTY SQUAD 2");
             pLevel.setBlockAndUpdate(pPos, ModBlocks.ASCHENBECHER_ZIGRR.get().defaultBlockState());
             if(pHand == InteractionHand.MAIN_HAND){ pPlayer.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);}
             if(pHand == InteractionHand.OFF_HAND){ pPlayer.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);}
@@ -54,13 +52,11 @@ public class AschenbecherBlock extends Block {
             return InteractionResult.SUCCESS;
          }
         if(stack.is(ItemStack.EMPTY.getItem())){
-            System.out.println("LMAO WHO DID THIS");
             if(pState.is(ModBlocks.ASCHENBECHER_ZIG.get())){
                 pLevel.setBlockAndUpdate(pPos, ModBlocks.ASCHENBECHER.get().defaultBlockState());
                 pPlayer.setItemInHand(pHand, new ItemStack(ModItems.ZIGARETTE.get()));
             }
             if(pState.is(ModBlocks.ASCHENBECHER_ZIGRR.get())){
-                System.out.println("AHAHHAAHAHAHAAHAHAHA");
                 pLevel.setBlockAndUpdate(pPos, ModBlocks.ASCHENBECHER.get().defaultBlockState());
                 pPlayer.setItemInHand(pHand, new ItemStack(ModItems.ZIGARRE.get()));
             }
