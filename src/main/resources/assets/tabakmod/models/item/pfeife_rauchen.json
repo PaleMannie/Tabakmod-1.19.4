@@ -1,0 +1,6 @@
+{
+  "parent": "tabakmod:item/pfeife",
+  "textures": {
+     "layer0": "tabakmod:item/pfeife_rauchen"
+   }
+}

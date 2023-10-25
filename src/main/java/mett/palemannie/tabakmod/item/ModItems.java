@@ -65,7 +65,7 @@ public class ModItems
     public static final RegistryObject<Item> PFEIFE = ITEMS.register("pfeife",
             () -> new PfeifenItem(new Item.Properties().durability(220)));
     public static final RegistryObject<Item> PFEIFE_LEER = ITEMS.register("pfeife_leer",
-            () -> new LeerePfeifenItem(new Item.Properties()));
+            () -> new LeerePfeifenItem(new Item.Properties().stacksTo(1)));
 
     public static void register(IEventBus eventBus)
     {

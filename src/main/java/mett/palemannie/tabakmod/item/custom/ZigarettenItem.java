@@ -35,16 +35,16 @@ public class ZigarettenItem extends Item {
     }
     void gibRauchStandardEffekte(Player player){
         player.addEffect(new MobEffectInstance(MobEffects.CONFUSION,90,0));
-        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,100,0));
+        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,200,0));
         player.addEffect(new MobEffectInstance(MobEffects.SATURATION,1,0));
     }
 
     void gibZuLangesZiehenEffekte(Player player){
-        player.addEffect(new MobEffectInstance(MobEffects.CONFUSION,120,0));
-        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,200,0));
-        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,200,0));
+        player.addEffect(new MobEffectInstance(MobEffects.CONFUSION,130,0));
+        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,300,0));
+        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,300,0));
         player.addEffect(new MobEffectInstance(MobEffects.SATURATION,2,0));
-        player.addEffect(new MobEffectInstance(MobEffects.HARM,1,0));
+        player.addEffect(new MobEffectInstance(MobEffects.HARM,1,1));
     }
 ////////////////////////////////////////////////NUTZMETHODEN////////////////////////////////////////////////////////////////////////
     @Override
@@ -102,7 +102,7 @@ public class ZigarettenItem extends Item {
     }
     @Override
     public int getUseDuration(ItemStack pStack) {
-        return 82;
+        return 102;
     }
     public UseAnim getUseAnimation(ItemStack pStack) {
         return UseAnim.BOW;

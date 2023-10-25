@@ -5,6 +5,7 @@ import mett.palemannie.tabakmod.block.ModBlocks;
 import mett.palemannie.tabakmod.item.ModCreativeModeTabs;
 import mett.palemannie.tabakmod.item.ModItems;
 import mett.palemannie.tabakmod.loot.ModLootModifiers;
+import mett.palemannie.tabakmod.util.ModItemProperties;
 import mett.palemannie.tabakmod.villager.ModVillagers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -104,6 +105,7 @@ public class TabakMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.TABAKPFLANZE.get(), RenderType.cutout());
+            ModItemProperties.addCustomItemProperties();
         }
     }
 }

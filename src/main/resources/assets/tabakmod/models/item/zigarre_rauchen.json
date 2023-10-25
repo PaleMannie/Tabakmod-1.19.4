@@ -1,0 +1,6 @@
+{
+  "parent": "tabakmod:item/zigarre",
+  "textures": {
+     "layer0": "tabakmod:item/zigarre_rauchen"
+   }
+}

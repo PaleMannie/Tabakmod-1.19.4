@@ -3,6 +3,14 @@
   "textures": {
     "layer0": "tabakmod:item/zigarre"
   },
+  "overrides": [
+    {
+      "predicate": {
+        "minecraft:am_ziehen": 1
+      },
+      "model": "tabakmod:item/zigarre_rauchen"
+    }
+  ],
   "display": {
     "thirdperson_righthand": {
       "rotation": [-45, -90, 0],
