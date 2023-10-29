@@ -44,8 +44,14 @@
   "block.tabakmod.aschenbecher_zigrr": "Aschenbecher mit Zigarre",
   "block.tabakmod.aschenbecher_gross": "Großer Aschenbecher",
 
-
   "entity.minecraft.villager.tabakmod.tabakhaendler": "Tabakhändler",
+
+  "sounds.tabakmod.tabakprodukt_anzuenden": "Tabakprodukt wurde angezündet",
+  "sounds.tabakmod.paffen": "*paffen*",
+  "sounds.tabakmod.fertig_geraucht": "Spieler exhaliert Rauch",
+  "sounds.tabakmod.zu_lange_gezogen": "Spieler erstickt fast am Rauch",
+  "sounds.tabakmod.pfeife_laden": "Pfeife wird gestopft",
+
 
   "creativemodetab.tabak_tab": "Super Tabakmod"
 }

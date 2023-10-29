@@ -1,0 +1,60 @@
+{
+  "tabakprodukt_anzuenden": {
+    "subtitle": "sounds.tabakmod.tabakprodukt_anzuenden",
+    "sounds": [
+      "tabakmod:tabakprodukt_anzuenden1",
+      "tabakmod:tabakprodukt_anzuenden2",
+      "tabakmod:tabakprodukt_anzuenden3",
+      "tabakmod:tabakprodukt_anzuenden4"
+    ]
+  },
+  "paffen": {
+    "subtitle": "sounds.tabakmod.paffen",
+    "sounds": [
+      "tabakmod:paffen"
+    ]
+  },
+  "fertig_geraucht": {
+    "subtitle": "sounds.tabakmod.fertig_geraucht",
+    "sounds": [
+      "tabakmod:fertig_geraucht1",
+      "tabakmod:fertig_geraucht2",
+      "tabakmod:fertig_geraucht3",
+      "tabakmod:fertig_geraucht4",
+      "tabakmod:fertig_geraucht5",
+      "tabakmod:fertig_geraucht6"
+    ]
+  },
+  "zu_lange_gezogen": {
+    "subtitle": "sounds.tabakmod.zu_lange_gezogen",
+    "sounds": [
+      "tabakmod:fertig_geraucht1",
+      "tabakmod:fertig_geraucht3",
+      "tabakmod:zu_lange_gezogen1",
+      "tabakmod:zu_lange_gezogen2",
+      "tabakmod:zu_lange_gezogen3",
+      "tabakmod:zu_lange_gezogen4",
+      "tabakmod:zu_lange_gezogen5",
+      "tabakmod:zu_lange_gezogen7",
+      "tabakmod:zu_lange_gezogen8",
+      "tabakmod:zu_lange_gezogen9",
+      "tabakmod:zu_lange_gezogen10",
+      "tabakmod:zu_lange_gezogen12"
+    ]
+  },
+  "pfeife_laden": {
+    "subtitle": "sounds.tabakmod.pfeife_laden",
+    "sounds": [
+      "tabakmod:pfeife_ladeton1",
+      "tabakmod:pfeife_ladeton2",
+      "tabakmod:pfeife_ladeton3",
+      "tabakmod:pfeife_ladeton4",
+      "tabakmod:pfeife_ladeton5",
+      "tabakmod:pfeife_ladeton6",
+      "tabakmod:pfeife_ladeton7",
+      "tabakmod:pfeife_ladeton8",
+      "tabakmod:pfeife_ladeton9",
+      "tabakmod:pfeife_ladeton10"
+    ]
+  }
+}

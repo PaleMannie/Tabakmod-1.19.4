@@ -1,8 +1,9 @@
 package mett.palemannie.tabakmod.item.custom;
 
 import mett.palemannie.tabakmod.item.ModItems;
+import mett.palemannie.tabakmod.sound.ModSounds;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -20,6 +21,9 @@ public class ZigarettenItem extends Item {
     public ZigarettenItem(Properties pProperties) { super(pProperties); }
 ////////////////////////////////////////////////EIGENE METHODEN////////////////////////////////////////////////////////////////////////
     void paffe(Level level, Player player){
+        RandomSource rdm = RandomSource.create();
+        float r = (float)rdm.nextInt(9,11)/10;
+        player.playSound(ModSounds.PAFFEN.get(), 1f,r);
         Vec3 MausPos = player.getEyePosition();
         Vec3 SchauWinkel = player.getLookAngle();
         level.addParticle(ParticleTypes.SMOKE,
@@ -46,10 +50,13 @@ public class ZigarettenItem extends Item {
         player.addEffect(new MobEffectInstance(MobEffects.SATURATION,2,0));
         player.addEffect(new MobEffectInstance(MobEffects.HARM,1,1));
     }
+
 ////////////////////////////////////////////////NUTZMETHODEN////////////////////////////////////////////////////////////////////////
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
-        pPlayer.playSound(SoundEvents.PIG_AMBIENT, 0.1f,1f);
+        RandomSource rdm = RandomSource.create();
+        float r = (float)rdm.nextInt(8,12)/10;
+        pPlayer.playSound(ModSounds.TABAKPRODUKT_ANZUENDEN.get(), 1f,r);
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
     }
 
@@ -65,7 +72,9 @@ public class ZigarettenItem extends Item {
             });
         if(pStack.getDamageValue() >= pStack.getMaxDamage()-1){
             exhaliere(pLevel,pPlayer);
-            pPlayer.playSound(SoundEvents.COW_DEATH,0.1f,1f);
+            RandomSource rdm = RandomSource.create();
+            float r = (float)rdm.nextInt(8,12)/10;
+            pPlayer.playSound(ModSounds.FERTIG_GERAUCHT.get(),1f,r);
             }
         }
     }
@@ -75,6 +84,9 @@ public class ZigarettenItem extends Item {
         if(pLivingEntity instanceof Player pPlayer && (pTimeCharged <= getUseDuration(pStack) - 15)){
             gibRauchStandardEffekte(pPlayer);
             exhaliere(pLevel,pPlayer);
+            RandomSource rdm = RandomSource.create();
+            float r = (float)rdm.nextInt(8,12)/10;
+            pPlayer.playSound(ModSounds.FERTIG_GERAUCHT.get(),1f,r);
         }
         this.stopUsing(pLivingEntity);
     }
@@ -82,7 +94,11 @@ public class ZigarettenItem extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
         super.finishUsingItem(pStack, pLevel, pLivingEntity);
+
         if(pLivingEntity instanceof Player pPlayer){
+            RandomSource rdm = RandomSource.create();
+            float r = (float)rdm.nextInt(8,12)/10;
+            pPlayer.playSound(ModSounds.ZU_LANGE_GEZOGEN.get(),1f,r);
             gibZuLangesZiehenEffekte(pPlayer);
             exhaliere(pLevel,pPlayer);
         }
@@ -90,9 +106,8 @@ public class ZigarettenItem extends Item {
         return pStack;
     }
     private void stopUsing(LivingEntity pUser) {
-        pUser.playSound(SoundEvents.PIG_DEATH, 0.1F, 1.0F);
         if(pUser instanceof Player player){
-            player.getCooldowns().addCooldown(this,12);
+            player.getCooldowns().addCooldown(this,2);
         }
     }
 ////////////////////////////////////////////////////SONSTIGE METHODEN////////////////////////////////////////////////////////////////////

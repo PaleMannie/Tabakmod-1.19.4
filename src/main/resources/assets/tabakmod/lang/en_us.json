@@ -46,5 +46,11 @@
 
   "entity.minecraft.villager.tabakmod.tabakhaendler": "Tobacco Merchant",
 
+  "sounds.tabakmod.tabakprodukt_anzuenden": "Tobacco product is lit up",
+  "sounds.tabakmod.paffen": "Puffing sounds",
+  "sounds.tabakmod.fertig_geraucht": "Player finished smoking",
+  "sounds.tabakmod.zu_lange_gezogen": "Player chokes on smoke",
+  "sounds.tabakmod.pfeife_laden": "Pipe loading sounds",
+
   "creativemodetab.tabak_tab": "Super Tobacco Mod"
 }
