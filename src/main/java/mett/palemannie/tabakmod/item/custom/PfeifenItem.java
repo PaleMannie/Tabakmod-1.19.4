@@ -3,7 +3,8 @@ package mett.palemannie.tabakmod.item.custom;
 import mett.palemannie.tabakmod.item.ModItems;
 import mett.palemannie.tabakmod.sound.ModSounds;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.sounds.SoundEvents;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -29,19 +30,22 @@ public class PfeifenItem extends Item {
     void paffe(Level level, Player player){
         RandomSource rdm = RandomSource.create();
         float r = (float)rdm.nextInt(9,11)/10;
-        player.playSound(ModSounds.PAFFEN.get(), 1f,r);
+        level.playSound(null, player.getX(), player.getY(), player.getZ(), ModSounds.PAFFEN.get(), SoundSource.PLAYERS, 1f, r);
         Vec3 MausPos = player.getEyePosition();
         Vec3 SchauWinkel = player.getLookAngle();
-        level.addParticle(ParticleTypes.SMOKE,
+        level.addParticle(ParticleTypes.SMOKE,true,
             MausPos.x, MausPos.y-0.15d, MausPos.z,
             SchauWinkel.x/10, SchauWinkel.y/10, SchauWinkel.z/10);
     }
     void exhaliere(Level level, Player player){
         Vec3 MausPos = player.getEyePosition();
         Vec3 SchauWinkel = player.getLookAngle();
-        level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE,
+        level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, true,
                 MausPos.x, MausPos.y-0.2d, MausPos.z,
                 SchauWinkel.x/20, SchauWinkel.y/20, SchauWinkel.z/20);
+        if (level instanceof ServerLevel slevel) {
+            slevel.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, MausPos.x, MausPos.y-0.2d, MausPos.z, 1, 0.15d, 0d, 0.15d,0.02d);
+        }
     }
     void gibRauchStandardEffekte(Player player){
         player.addEffect(new MobEffectInstance(MobEffects.CONFUSION,80,0));
@@ -61,14 +65,14 @@ public class PfeifenItem extends Item {
     public InteractionResultHolder<ItemStack> use(Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
         RandomSource rdm = RandomSource.create();
         float r = (float)rdm.nextInt(8,12)/10;
-        pPlayer.playSound(ModSounds.TABAKPRODUKT_ANZUENDEN.get(), 1f,r);
+        pLevel.playSound(null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), ModSounds.TABAKPRODUKT_ANZUENDEN.get(), SoundSource.PLAYERS, 1f, r);
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
     }
     @Override
     public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pRemainingUseDuration) {
         super.onUseTick(pLevel, pLivingEntity, pStack, pRemainingUseDuration);
         RandomSource random = RandomSource.create();
-        float chance = 0.5f;
+        float chance = 0.7f;
         if(pLivingEntity instanceof Player pPlayer && (pRemainingUseDuration <= getUseDuration(pStack) - 10)) {
             if(chance >= random.nextFloat()){
                 paffe(pLevel, pPlayer);
@@ -82,18 +86,19 @@ public class PfeifenItem extends Item {
                 exhaliere(pLevel,pPlayer);
                 RandomSource rdm = RandomSource.create();
                 float r = (float)rdm.nextInt(8,12)/10;
-                pPlayer.playSound(ModSounds.FERTIG_GERAUCHT.get(),1f,r);
+                pPlayer.playSound(ModSounds.FERTIG_GERAUCHT.get(), 1f, r);
             }
         }
     }
     @Override
     public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity, int pTimeCharged) {
+        super.releaseUsing(pStack, pLevel, pLivingEntity, pTimeCharged);
         if(pLivingEntity instanceof Player pPlayer && (pTimeCharged <= getUseDuration(pStack) - 10)){
-            gibRauchStandardEffekte(pPlayer);
-            exhaliere(pLevel,pPlayer);
+                gibRauchStandardEffekte(pPlayer);
+                exhaliere(pLevel,pPlayer);
             RandomSource rdm = RandomSource.create();
             float r = (float)rdm.nextInt(8,12)/10;
-            pPlayer.playSound(ModSounds.FERTIG_GERAUCHT.get(),1f,r);
+            pLevel.playSound(null, pLivingEntity.getX(), pLivingEntity.getY(), pLivingEntity.getZ(), ModSounds.FERTIG_GERAUCHT.get(), SoundSource.PLAYERS, 1f, r);
         }
         this.stopUsing(pLivingEntity);
     }
@@ -101,12 +106,13 @@ public class PfeifenItem extends Item {
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
         super.finishUsingItem(pStack, pLevel, pLivingEntity);
         if(pLivingEntity instanceof Player pPlayer){
+                gibZuLangesZiehenEffekte(pPlayer);
+                exhaliere(pLevel,pPlayer);
             RandomSource rdm = RandomSource.create();
             float r = (float)rdm.nextInt(8,12)/10;
-            pPlayer.playSound(ModSounds.ZU_LANGE_GEZOGEN.get(),1f,r);
-            gibZuLangesZiehenEffekte(pPlayer);
-            exhaliere(pLevel,pPlayer);
+            pLevel.playSound(null, pLivingEntity.getX(), pLivingEntity.getY(), pLivingEntity.getZ(), ModSounds.ZU_LANGE_GEZOGEN.get(), SoundSource.PLAYERS, 1f, r);
         }
+        super.finishUsingItem(pStack, pLevel, pLivingEntity);
         this.stopUsing(pLivingEntity);
         return pStack;
     }

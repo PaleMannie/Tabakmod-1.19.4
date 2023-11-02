@@ -46,7 +46,7 @@ public class TabakMod
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork( ()-> {
-           ModVillagers.registerPOIs();
+            ModVillagers.registerPOIs();
         });
     }
 
