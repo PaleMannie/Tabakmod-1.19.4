@@ -51,7 +51,7 @@ public class DschointItem extends Item {
         }
     void gibRauchStandardEffekte(Player player){
         player.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN,1000,0));
-        player.addEffect(new MobEffectInstance(MobEffects.LEVITATION,40,0));
+        player.addEffect(new MobEffectInstance(MobEffects.LEVITATION,16,0));
         player.addEffect(new MobEffectInstance(MobEffects.CONFUSION,200,0));
         player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,1000,0));
         player.addEffect(new MobEffectInstance(MobEffects.DARKNESS,50,0));
@@ -109,9 +109,10 @@ public class DschointItem extends Item {
         super.finishUsingItem(pStack, pLevel, pLivingEntity);
         RandomSource rdm = RandomSource.create();
          float r = (float)rdm.nextInt(9,11)/10;
-         pLevel.playSound(null, pLivingEntity.getX(), pLivingEntity.getY(), pLivingEntity.getZ(), ModSounds.DSCHOINT.get(), SoundSource.PLAYERS, 2f, r);
-             gibZuLangesZiehenEffekte((Player)pLivingEntity);
-             exhaliere(pLevel,(Player)pLivingEntity);
+            pLevel.playSound(null, pLivingEntity.getX(), pLivingEntity.getY(), pLivingEntity.getZ(), ModSounds.ZU_LANGE_GEZOGEN.get(), SoundSource.PLAYERS, 1f, r);
+            pLevel.playSound(null, pLivingEntity.getX(), pLivingEntity.getY(), pLivingEntity.getZ(), ModSounds.DSCHOINT.get(), SoundSource.PLAYERS, 2f, r);
+            gibZuLangesZiehenEffekte((Player)pLivingEntity);
+            exhaliere(pLevel,(Player)pLivingEntity);
          this.stopUsing(pLivingEntity);
         return pStack;
         }

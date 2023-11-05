@@ -69,7 +69,8 @@
     "subtitle": "sounds.tabakmod.dschoint",
     "sounds": [
       "tabakmod:dschoint1",
-      "tabakmod:dschoint2"
+      "tabakmod:dschoint1",
+      "tabakmod:dschoint1"
     ]
   }
 }
