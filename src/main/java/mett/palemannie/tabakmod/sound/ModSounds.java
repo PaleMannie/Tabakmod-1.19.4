@@ -16,6 +16,8 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> FERTIG_GERAUCHT = registerSoundEvent("fertig_geraucht");
     public static final RegistryObject<SoundEvent> ZU_LANGE_GEZOGEN = registerSoundEvent("zu_lange_gezogen");
     public static final RegistryObject<SoundEvent> PFEIFE_LADEN = registerSoundEvent("pfeife_laden");
+    public static final RegistryObject<SoundEvent> SCHEISE_GERAUCHT = registerSoundEvent("scheise_geraucht");
+    public static final RegistryObject<SoundEvent> DSCHOINT = registerSoundEvent("dschoint");
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {

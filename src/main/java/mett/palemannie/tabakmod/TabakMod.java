@@ -76,9 +76,12 @@ public class TabakMod
             event.accept(ModBlocks.DUNKLER_TABAKBALLEN);
 
             event.accept(ModItems.ZIGARETTE);
+            event.accept(ModItems.ZIGARETTE_MENTHOL);
+            event.accept(ModItems.ZIGARETTE_SCHEISE);
             event.accept(ModItems.ZIGARRE);
             event.accept(ModItems.PFEIFE);
             event.accept(ModItems.PFEIFE_LEER);
+            event.accept(ModItems.DSCHOINT);
             event.accept(ModItems.ZIGARETTEN);
             event.accept(ModItems.ZIGARREN);
             event.accept(ModItems.ZIGARETTENFILTER);
@@ -88,6 +91,8 @@ public class TabakMod
             event.accept(ModItems.ZIGARETTENSCHACHTEL_LEER);
             event.accept(ModItems.ZIGARETTENSCHACHTEL_GROSS);
             event.accept(ModItems.ZIGARETTENSCHACHTEL_GROSS_LEER);
+            event.accept(ModItems.ZIGARETTENSCHACHTEL_MENTHOL);
+            event.accept(ModItems.ZIGARETTENSCHACHTEL_MENTHOL_LEER);
             event.accept(ModItems.ZIGARRENSCHACHTEL);
             event.accept(ModItems.ZIGARRENSCHACHTEL_LEER);
             event.accept(ModItems.DECKBLATT);

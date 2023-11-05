@@ -66,6 +66,16 @@ public class ModItems
             () -> new PfeifenItem(new Item.Properties().durability(220)));
     public static final RegistryObject<Item> PFEIFE_LEER = ITEMS.register("pfeife_leer",
             () -> new LeerePfeifenItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> ZIGARETTE_MENTHOL = ITEMS.register("zigarette_menthol",
+            () -> new MenthZigarettenItem(new Item.Properties().durability(200)));
+    public static final RegistryObject<Item> ZIGARETTENSCHACHTEL_MENTHOL = ITEMS.register("zigarettenschachtel_menthol",
+            () -> new ZigSchachtelItem(new Item.Properties().durability(20)));
+    public static final RegistryObject<Item> ZIGARETTENSCHACHTEL_MENTHOL_LEER = ITEMS.register("zigarettenschachtel_menthol_leer",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ZIGARETTE_SCHEISE = ITEMS.register("zigarette_scheise",
+            () -> new ScheisZigarettenItem(new Item.Properties().durability(100)));
+    public static final RegistryObject<Item> DSCHOINT = ITEMS.register("dschoint",
+            () -> new DschointItem(new Item.Properties().durability(200)));
 
     public static void register(IEventBus eventBus)
     {

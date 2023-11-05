@@ -16,6 +16,11 @@
   "item.tabakmod.zigarrenschachtel_leer": "Empty Cigar Box",
   "item.tabakmod.pfeife": "Tobacco Pipe",
   "item.tabakmod.pfeife_leer": "Empty Tobacco Pipe",
+  "item.tabakmod.zigarette_menthol": "Menthol Cigarette",
+  "item.tabakmod.zigarettenschachtel_menthol": "Menthol Cigarette Pack",
+  "item.tabakmod.zigarettenschachtel_menthol_leer": "Empty Menthol Cigarette Pack",
+  "item.tabakmod.zigarette_scheise": "Shit Cigarette",
+  "item.tabakmod.dschoint": "Joint",
 
   "item.tabakmod.trockener_tabak": "Dried Tobacco",
   "item.tabakmod.heller_tabak": "Bright Tobacco",
@@ -50,7 +55,9 @@
   "sounds.tabakmod.paffen": "Puffing sounds",
   "sounds.tabakmod.fertig_geraucht": "Player finished smoking",
   "sounds.tabakmod.zu_lange_gezogen": "Player chokes on smoke",
-  "sounds.tabakmod.pfeife_laden": "Pipe loading sounds",
+  "sounds.tabakmod.pfeife_laden": "Pipe being stuffed",
+  "sounds.tabakmod.sounds.tabakmod.scheise_geraucht": "Shit Cigarette has been smoked",
+  "sounds.tabakmod.dschoint": "DUDE, WEED LMAO",
 
   "creativemodetab.tabak_tab": "Super Tobacco Mod"
 }

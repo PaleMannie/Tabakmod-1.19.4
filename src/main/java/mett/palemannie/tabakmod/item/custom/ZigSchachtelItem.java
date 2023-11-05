@@ -21,6 +21,8 @@ public class ZigSchachtelItem extends Item {
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         ItemStack stack = pPlayer.getItemInHand(pUsedHand);
         ItemStack zig = new ItemStack(ModItems.ZIGARETTE.get());
+        ItemStack zig_menthol = new ItemStack(ModItems.ZIGARETTE_MENTHOL.get());
+        ItemStack zig_scheise = new ItemStack(ModItems.ZIGARETTE_SCHEISE.get());
 
         stack.hurtAndBreak(1,pPlayer, p ->{
             if(this == ModItems.ZIGARETTENSCHACHTEL.get()){
@@ -31,6 +33,10 @@ public class ZigSchachtelItem extends Item {
                 ItemStack x = new ItemStack(ModItems.ZIGARETTENSCHACHTEL_GROSS_LEER.get());
                 p.setItemInHand(pUsedHand,x);
             }
+            if(this == ModItems.ZIGARETTENSCHACHTEL_MENTHOL.get()){
+                ItemStack x = new ItemStack(ModItems.ZIGARETTENSCHACHTEL_MENTHOL_LEER.get());
+                p.setItemInHand(pUsedHand,x);
+            }
             p.stopUsingItem();
         });
         if(stack.getDamageValue() >= stack.getMaxDamage()-1){
@@ -39,7 +45,7 @@ public class ZigSchachtelItem extends Item {
         }
         //FÜGE NOCH CUSTOM TÖNE HINZU
         pPlayer.playSound(SoundEvents.CHAIN_PLACE);
-        pPlayer.addItem(zig);
+        if(this == ModItems.ZIGARETTENSCHACHTEL_MENTHOL.get()){pPlayer.addItem(zig_menthol);} else pPlayer.addItem(zig);
         pPlayer.stopUsingItem();
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
     }

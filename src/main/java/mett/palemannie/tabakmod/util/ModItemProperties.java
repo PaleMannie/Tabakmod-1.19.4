@@ -10,9 +10,9 @@ public class ModItemProperties {
         bringTabakproduktZumGluehenBeimZiehen(ModItems.PFEIFE.get());
         bringTabakproduktZumGluehenBeimZiehen(ModItems.ZIGARETTE.get());
         bringTabakproduktZumGluehenBeimZiehen(ModItems.ZIGARRE.get());
-    /*    bringTabakproduktZumGluehenBeimZiehen(ModItems.MENTHOLZIGARETTE.get());
+        bringTabakproduktZumGluehenBeimZiehen(ModItems.ZIGARETTE_MENTHOL.get());
         bringTabakproduktZumGluehenBeimZiehen(ModItems.DSCHOINT.get());
-        bringTabakproduktZumGluehenBeimZiehen(ModItems.SCHEISSZIGARETTE.get());*/
+        bringTabakproduktZumGluehenBeimZiehen(ModItems.ZIGARETTE_SCHEISE.get());
     }
     private static void bringTabakproduktZumGluehenBeimZiehen(Item item) {
         ItemProperties.register(item, new ResourceLocation("am_ziehen"), (itemStack, level, entity, i) -> {

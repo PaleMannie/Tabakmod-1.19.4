@@ -58,5 +58,18 @@
       "tabakmod:pfeife_ladeton9",
       "tabakmod:pfeife_ladeton10"
     ]
+  },
+  "scheise_geraucht": {
+    "subtitle": "sounds.tabakmod.scheise_geraucht",
+    "sounds": [
+      "tabakmod:zu_lange_gezogen6"
+    ]
+  },
+  "dschoint": {
+    "subtitle": "sounds.tabakmod.dschoint",
+    "sounds": [
+      "tabakmod:dschoint1",
+      "tabakmod:dschoint2"
+    ]
   }
 }

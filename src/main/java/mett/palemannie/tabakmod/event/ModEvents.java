@@ -26,6 +26,13 @@ public class ModEvents {
 //1111111111111111111111111111111111111111111111111111111111111//NEULING////////////////////////////////////////////////
         if(event.getType() == ModVillagers.TABAKHAENDLER.get()){
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack eingabe = new ItemStack(Items.EMERALD, 1);
+            ItemStack ausgabe = new ItemStack(ModItems.ZIGARETTE_SCHEISE.get(), 1);
+            int villagerLevel = 1;
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(eingabe, ausgabe, 10, 1, 0.02f));
+        }
+        if(event.getType() == ModVillagers.TABAKHAENDLER.get()){
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
             ItemStack eingabe = new ItemStack(Items.EMERALD, 4);
             ItemStack ausgabe = new ItemStack(ModItems.DECKBLATT.get(), 10);
             int villagerLevel = 1;
@@ -124,6 +131,14 @@ public class ModEvents {
 //3333333333333333333333333333333333333333333333333333333333333//GESELLE////////////////////////////////////////////////
         if(event.getType() == ModVillagers.TABAKHAENDLER.get()){
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack eingabe1 = new ItemStack(ModItems.ZIGARETTENSCHACHTEL_MENTHOL_LEER.get(), 1);
+            ItemStack eingabe2 = new ItemStack(Items.EMERALD, 50);
+            ItemStack ausgabe = new ItemStack(ModBlocks.HELLER_TABAKBALLEN.get(), 1);
+            int villagerLevel = 3;
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(eingabe1, eingabe2, ausgabe, 5, 6, 0.02f));
+        }
+        if(event.getType() == ModVillagers.TABAKHAENDLER.get()){
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
             ItemStack eingabe = new ItemStack(Items.EMERALD, 12);
             ItemStack ausgabe = new ItemStack(ModBlocks.ASCHENBECHER.get(), 1);
             int villagerLevel = 3;
@@ -201,7 +216,7 @@ public class ModEvents {
 //5555555555555555555555555555555555555555555555555555555555555//MEISTER////////////////////////////////////////////////
         if(event.getType() == ModVillagers.TABAKHAENDLER.get()){
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack eingabe = new ItemStack(Items.EMERALD_BLOCK, 30);
+            ItemStack eingabe = new ItemStack(Items.EMERALD_BLOCK, 20);
             ItemStack ausgabe = new ItemStack(ModItems.ZIGARETTENSCHACHTEL_GROSS.get(), 1);
             int villagerLevel = 5;
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(eingabe, ausgabe, 1, 200, 0.02f));
@@ -221,7 +236,13 @@ public class ModEvents {
             int villagerLevel = 5;
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(eingabe, ausgabe, 1, 10, 0.02f));
         }
-
+        if(event.getType() == ModVillagers.TABAKHAENDLER.get()){
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack eingabe = new ItemStack(Items.EMERALD, 64);
+            ItemStack ausgabe = new ItemStack(ModItems.ZIGARETTENSCHACHTEL_MENTHOL.get(), 1);
+            int villagerLevel = 5;
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(eingabe, ausgabe, 1, 10, 0.02f));
+        }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////BAUER/////////////////////////////////////////////////////////////////////////////////////////
         if(event.getType() == VillagerProfession.FARMER){

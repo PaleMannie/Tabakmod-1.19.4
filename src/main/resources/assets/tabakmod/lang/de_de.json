@@ -16,6 +16,12 @@
   "item.tabakmod.zigarrenschachtel_leer": "Leere Zigarrenschachtel",
   "item.tabakmod.pfeife": "Tabakpfeife",
   "item.tabakmod.pfeife_leer": "Leere Tabakpfeife",
+  "item.tabakmod.zigarette_menthol": "Mentholzigarette",
+  "item.tabakmod.zigarettenschachtel_menthol": "Mentholzigarettenschachtel",
+  "item.tabakmod.zigarettenschachtel_menthol_leer": "Leere Mentholzigarettenschachtel",
+  "item.tabakmod.zigarette_scheise": "Scheißzigarette",
+  "item.tabakmod.dschoint": "Dübel",
+
 
   "item.tabakmod.trockener_tabak": "Trockener Tabak",
   "item.tabakmod.heller_tabak": "Heller Tabak",
@@ -51,6 +57,8 @@
   "sounds.tabakmod.fertig_geraucht": "Spieler exhaliert Rauch",
   "sounds.tabakmod.zu_lange_gezogen": "Spieler erstickt fast am Rauch",
   "sounds.tabakmod.pfeife_laden": "Pfeife wird gestopft",
+  "sounds.tabakmod.sounds.tabakmod.scheise_geraucht": "Beschissene Zigarette wurde geraucht",
+  "sounds.tabakmod.dschoint": "JUNGE, UIEHD LMAA",
 
 
   "creativemodetab.tabak_tab": "Super Tabakmod"
