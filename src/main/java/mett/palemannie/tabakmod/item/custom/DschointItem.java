@@ -46,7 +46,7 @@ public class DschointItem extends Item {
                 MausPos.x, MausPos.y-0.2d, MausPos.z,
                 SchauWinkel.x/20, SchauWinkel.y/20, SchauWinkel.z/20);
         if (level instanceof ServerLevel slevel) {
-            slevel.sendParticles(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, MausPos.x, MausPos.y-0.2d, MausPos.z, 20, 0.15d, 0d, 0.15d,0.02d);
+            slevel.sendParticles(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, MausPos.x, MausPos.y-0.2d, MausPos.z, 50, 0.15d, 0d, 0.15d,0.02d);
             }
         }
     void gibRauchStandardEffekte(Player player){
