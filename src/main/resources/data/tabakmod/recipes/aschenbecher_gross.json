@@ -3,11 +3,17 @@
   "category": "misc",
   "key": {
     "S": {
-      "item": "tabakmod:aschebecher"
+      "item": "tabakmod:aschenbecher"
+    },
+    "Z": {
+      "item": "tabakmod:zigarettenstummel"
+    },
+    "T": {
+      "item": "tabakmod:zigarrenstummel"
     }
   },
   "pattern": [
-    "SSS",
+    "T Z",
     "SSS",
     "SSS"
   ],

@@ -37,7 +37,7 @@ public class ScheisZigarettenItem extends Item {
         level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, true,
                 MausPos.x, MausPos.y-0.15d, MausPos.z,
                 SchauWinkel.x/10, SchauWinkel.y/10, SchauWinkel.z/10);
-        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,0,2));
+        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,1,2));
         player.addEffect(new MobEffectInstance(MobEffects.HARM,1,0));
     }
     void exhaliere(Level level, Player player){
