@@ -74,7 +74,7 @@ public class ScheisZigarettenItem extends Item {
     @Override
     public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pRemainingUseDuration) {
         super.onUseTick(pLevel, pLivingEntity, pStack, pRemainingUseDuration);
-        if(pLivingEntity instanceof Player pPlayer && (pRemainingUseDuration <= getUseDuration(pStack) - 10)) {
+        if(pLivingEntity instanceof Player pPlayer && (pRemainingUseDuration <= getUseDuration(pStack) - 12)) {
             paffe(pLevel,pPlayer);
             pStack.hurtAndBreak(1, pPlayer, p -> {
                 gibRauchStandardEffekte(pPlayer);
@@ -94,7 +94,7 @@ public class ScheisZigarettenItem extends Item {
     @Override
     public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity, int pTimeCharged) {
         super.releaseUsing(pStack, pLevel, pLivingEntity, pTimeCharged);
-        if(pLivingEntity instanceof Player pPlayer && (pTimeCharged <= getUseDuration(pStack) - 10)) {
+        if(pLivingEntity instanceof Player pPlayer && (pTimeCharged <= getUseDuration(pStack) - 12)) {
             gibRauchStandardEffekte(pPlayer);
             exhaliere(pLevel, pPlayer);
             RandomSource rdm = RandomSource.create();

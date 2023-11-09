@@ -24,7 +24,12 @@
       "tabakmod:fertig_geraucht3",
       "tabakmod:fertig_geraucht4",
       "tabakmod:fertig_geraucht5",
-      "tabakmod:fertig_geraucht6"
+      "tabakmod:fertig_geraucht6",
+      "tabakmod:fertig_geraucht7",
+      "tabakmod:fertig_geraucht8",
+      "tabakmod:fertig_geraucht3",
+      "tabakmod:fertig_geraucht2",
+      "tabakmod:fertig_geraucht3"
     ]
   },
   "zu_lange_gezogen": {
@@ -41,7 +46,14 @@
       "tabakmod:zu_lange_gezogen8",
       "tabakmod:zu_lange_gezogen9",
       "tabakmod:zu_lange_gezogen10",
-      "tabakmod:zu_lange_gezogen12"
+      "tabakmod:zu_lange_gezogen11",
+      "tabakmod:zu_lange_gezogen12",
+      "tabakmod:zu_lange_gezogen13",
+      "tabakmod:zu_lange_gezogen14",
+      "tabakmod:zu_lange_gezogen15",
+      "tabakmod:zu_lange_gezogen16",
+      "tabakmod:zu_lange_gezogen17",
+      "tabakmod:zu_lange_gezogen18"
     ]
   },
   "pfeife_laden": {
@@ -62,14 +74,20 @@
   "scheise_geraucht": {
     "subtitle": "sounds.tabakmod.scheise_geraucht",
     "sounds": [
-      "tabakmod:zu_lange_gezogen6"
+      "tabakmod:zu_lange_gezogen6",
+      "tabakmod:zu_lange_gezogen6",
+      "tabakmod:zu_lange_gezogen6",
+      "tabakmod:zu_lange_gezogen6",
+      "tabakmod:zu_lange_gezogen6",
+      "tabakmod:scheisezig_dood1",
+      "tabakmod:scheisezig_dood3",
+      "tabakmod:scheisezig_dood4",
+      "tabakmod:scheisezig_dood5"
     ]
   },
   "dschoint": {
     "subtitle": "sounds.tabakmod.dschoint",
     "sounds": [
-      "tabakmod:dschoint1",
-      "tabakmod:dschoint1",
       "tabakmod:dschoint1"
     ]
   }

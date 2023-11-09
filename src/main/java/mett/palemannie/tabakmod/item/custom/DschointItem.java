@@ -54,7 +54,7 @@ public class DschointItem extends Item {
         player.addEffect(new MobEffectInstance(MobEffects.LEVITATION,16,0));
         player.addEffect(new MobEffectInstance(MobEffects.CONFUSION,200,0));
         player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,1000,0));
-        player.addEffect(new MobEffectInstance(MobEffects.DARKNESS,50,0));
+        player.addEffect(new MobEffectInstance(MobEffects.DARKNESS,80,0));
     }
 
     void gibZuLangesZiehenEffekte(Player player){
