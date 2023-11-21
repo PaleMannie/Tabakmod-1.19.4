@@ -48,16 +48,16 @@ public class ZigarrenItem extends Item {
             slevel.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, MausPos.x, MausPos.y-0.2d, MausPos.z, 3, 0.15d, 0d, 0.15d,0.02d);
         }
     }
-    void gibRauchStandardEffekte(Player player){
-        player.addEffect(new MobEffectInstance(MobEffects.CONFUSION,110,0));
-        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,240,1));
+    void gibRauchStandardEffekte(Player player, ItemStack stack, int gepaffteZeit){
+        player.addEffect(new MobEffectInstance(MobEffects.CONFUSION,getUseDuration(stack)-gepaffteZeit+78,0));
+        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,(getUseDuration(stack)-gepaffteZeit)*2+46,1));
         player.addEffect(new MobEffectInstance(MobEffects.SATURATION,1,1));
     }
 
     void gibZuLangesZiehenEffekte(Player player){
-        player.addEffect(new MobEffectInstance(MobEffects.CONFUSION,150,1));
-        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,400,1));
-        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,400,1));
+        player.addEffect(new MobEffectInstance(MobEffects.CONFUSION,180,1));
+        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,300,1));
+        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,300,1));
         player.addEffect(new MobEffectInstance(MobEffects.SATURATION,2,1));
         player.addEffect(new MobEffectInstance(MobEffects.HARM,1,2));
     }
@@ -77,7 +77,7 @@ public class ZigarrenItem extends Item {
         if(pLivingEntity instanceof Player pPlayer && (pRemainingUseDuration <= getUseDuration(pStack) - 24)) {
             paffe(pLevel,pPlayer);
             pStack.hurtAndBreak(1, pPlayer, p -> {
-                gibRauchStandardEffekte(pPlayer);
+                gibRauchStandardEffekte(pPlayer, pStack, pRemainingUseDuration);
                 ItemStack itemstack = new ItemStack(ModItems.ZIGARRENSTUMMEL.get());
                 p.drop(itemstack,true);
             });
@@ -94,7 +94,7 @@ public class ZigarrenItem extends Item {
     public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity, int pTimeCharged) {
         super.releaseUsing(pStack, pLevel, pLivingEntity, pTimeCharged);
         if(pLivingEntity instanceof Player pPlayer && (pTimeCharged <= getUseDuration(pStack) - 24)){
-                gibRauchStandardEffekte(pPlayer);
+                gibRauchStandardEffekte(pPlayer, pStack, pTimeCharged);
                 exhaliere(pLevel,pPlayer);
             RandomSource rdm = RandomSource.create();
             float r = (float)rdm.nextInt(8,12)/10;

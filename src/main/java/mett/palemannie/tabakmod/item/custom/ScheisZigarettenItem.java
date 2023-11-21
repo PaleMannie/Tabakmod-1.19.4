@@ -37,7 +37,7 @@ public class ScheisZigarettenItem extends Item {
         level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, true,
                 MausPos.x, MausPos.y-0.15d, MausPos.z,
                 SchauWinkel.x/10, SchauWinkel.y/10, SchauWinkel.z/10);
-        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,1,2));
+        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,4,2));
         player.addEffect(new MobEffectInstance(MobEffects.HARM,1,0));
     }
     void exhaliere(Level level, Player player){
@@ -54,13 +54,14 @@ public class ScheisZigarettenItem extends Item {
             }
         }
     void gibRauchStandardEffekte(Player player){
+        player.addEffect(new MobEffectInstance(MobEffects.HARM,1,0));
         player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,100,3));
         player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS,100,0));
         player.addEffect(new MobEffectInstance(MobEffects.DARKNESS,100,0));
     }
 
     void gibZuLangesZiehenEffekte(Player player){
-        player.addEffect(new MobEffectInstance(MobEffects.HARM,1,3));
+        player.addEffect(new MobEffectInstance(MobEffects.HARM,1,2));
     }
 ////////////////////////////////////////////////NUTZMETHODEN////////////////////////////////////////////////////////////////////////
     @Override
@@ -124,7 +125,7 @@ public class ScheisZigarettenItem extends Item {
     @Override
     public int getEntityLifespan(ItemStack itemStack, Level level) { return 72000; }
     @Override
-    public int getUseDuration(ItemStack pStack) { return 102; }
+    public int getUseDuration(ItemStack pStack) { return 51; }
     public UseAnim getUseAnimation(ItemStack pStack) { return UseAnim.BOW; }
     @Override
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) { return slotChanged; }

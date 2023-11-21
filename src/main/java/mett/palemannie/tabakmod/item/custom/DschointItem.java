@@ -49,20 +49,20 @@ public class DschointItem extends Item {
             slevel.sendParticles(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, MausPos.x, MausPos.y-0.2d, MausPos.z, 50, 0.15d, 0d, 0.15d,0.02d);
             }
         }
-    void gibRauchStandardEffekte(Player player){
-        player.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN,1000,0));
-        player.addEffect(new MobEffectInstance(MobEffects.LEVITATION,16,0));
-        player.addEffect(new MobEffectInstance(MobEffects.CONFUSION,200,0));
-        player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,1000,0));
-        player.addEffect(new MobEffectInstance(MobEffects.DARKNESS,80,0));
+    void gibRauchStandardEffekte(Player player, ItemStack stack, int gepaffteZeit){
+        player.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, (getUseDuration(stack)-gepaffteZeit)*10,0));
+        player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,(getUseDuration(stack)-gepaffteZeit)*10,0));
+        player.addEffect(new MobEffectInstance(MobEffects.LEVITATION,10+(getUseDuration(stack)-gepaffteZeit)/2,0));
+        player.addEffect(new MobEffectInstance(MobEffects.CONFUSION,98+(getUseDuration(stack)-gepaffteZeit)*2,0));
+        player.addEffect(new MobEffectInstance(MobEffects.DARKNESS,(getUseDuration(stack)-gepaffteZeit)*2,0));
     }
 
     void gibZuLangesZiehenEffekte(Player player){
-        player.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN,1000,1));
+        player.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN,1020,1));
+        player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,1020,0));
         player.addEffect(new MobEffectInstance(MobEffects.LEVITATION,70,0));
         player.addEffect(new MobEffectInstance(MobEffects.CONFUSION,300,0));
-        player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,1000,0));
-        player.addEffect(new MobEffectInstance(MobEffects.DARKNESS,200,0));
+        player.addEffect(new MobEffectInstance(MobEffects.DARKNESS,210,0));
         player.addEffect(new MobEffectInstance(MobEffects.HARM,1,0));
     }
 ////////////////////////////////////////////////NUTZMETHODEN////////////////////////////////////////////////////////////////////////
@@ -80,7 +80,7 @@ public class DschointItem extends Item {
         if(pLivingEntity instanceof Player pPlayer && (pRemainingUseDuration <= getUseDuration(pStack) - 15)) {
             if(pRemainingUseDuration%4==0){ paffe(pLevel,pPlayer); }
             pStack.hurtAndBreak(1, pPlayer, p -> {
-                gibRauchStandardEffekte(pPlayer);
+                gibRauchStandardEffekte(pPlayer, pStack, pRemainingUseDuration);
             });
         if(pStack.getDamageValue() >= pStack.getMaxDamage()-1){
             RandomSource rdm = RandomSource.create();
@@ -95,7 +95,7 @@ public class DschointItem extends Item {
     public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity, int pTimeCharged) {
         super.releaseUsing(pStack, pLevel, pLivingEntity, pTimeCharged);
         if(pLivingEntity instanceof Player pPlayer && (pTimeCharged <= getUseDuration(pStack) - 15)) {
-            gibRauchStandardEffekte(pPlayer);
+            gibRauchStandardEffekte(pPlayer, pStack, pTimeCharged);
             exhaliere(pLevel, pPlayer);
             RandomSource rdm = RandomSource.create();
             float r = (float) rdm.nextInt(9, 11) / 10;

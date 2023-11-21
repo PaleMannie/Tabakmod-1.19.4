@@ -49,16 +49,16 @@ public class MenthZigarettenItem extends Item {
             slevel.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, MausPos.x, MausPos.y-0.2d, MausPos.z, 1, 0.15d, 0d, 0.15d,0.02d);
             }
         }
-    void gibRauchStandardEffekte(Player player){
-        player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,50,0));
-        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,200,0));
+    void gibRauchStandardEffekte(Player player, ItemStack stack, int gepaffteZeit){
+        player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,(getUseDuration(stack)-gepaffteZeit),0));
+        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,(getUseDuration(stack)-gepaffteZeit)*3,0));
         player.addEffect(new MobEffectInstance(MobEffects.SATURATION,1,0));
     }
 
     void gibZuLangesZiehenEffekte(Player player){
         player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,150,0));
-        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,400,0));
-        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,400,0));
+        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,300,0));
+        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,300,0));
         player.addEffect(new MobEffectInstance(MobEffects.SATURATION,2,0));
         player.addEffect(new MobEffectInstance(MobEffects.HARM,1,0));
     }
@@ -77,7 +77,7 @@ public class MenthZigarettenItem extends Item {
         if(pLivingEntity instanceof Player pPlayer && (pRemainingUseDuration <= getUseDuration(pStack) - 15)) {
             paffe(pLevel,pPlayer);
             pStack.hurtAndBreak(1, pPlayer, p -> {
-                gibRauchStandardEffekte(pPlayer);
+                gibRauchStandardEffekte(pPlayer, pStack, pRemainingUseDuration);
                 ItemStack itemstack = new ItemStack(ModItems.ZIGARETTENSTUMMEL.get());
                 p.drop(itemstack,true);
             });
@@ -94,7 +94,7 @@ public class MenthZigarettenItem extends Item {
     public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity, int pTimeCharged) {
         super.releaseUsing(pStack, pLevel, pLivingEntity, pTimeCharged);
         if(pLivingEntity instanceof Player pPlayer && (pTimeCharged <= getUseDuration(pStack) - 15)) {
-            gibRauchStandardEffekte(pPlayer);
+            gibRauchStandardEffekte(pPlayer, pStack, pTimeCharged);
             exhaliere(pLevel, pPlayer);
             RandomSource rdm = RandomSource.create();
             float r = (float) rdm.nextInt(8, 12) / 10;
