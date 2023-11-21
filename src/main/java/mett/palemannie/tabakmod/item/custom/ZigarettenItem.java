@@ -48,7 +48,7 @@ public class ZigarettenItem extends Item {
         }
     void gibRauchStandardEffekte(Player player, ItemStack stack, int gepaffteZeit){
         player.addEffect(new MobEffectInstance(MobEffects.CONFUSION,getUseDuration(stack)-gepaffteZeit+58,0));
-        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,getUseDuration(stack)-gepaffteZeit+58,0));
+        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,(24*(getUseDuration(stack)-gepaffteZeit))/10,0));
         player.addEffect(new MobEffectInstance(MobEffects.SATURATION,1,0));
     }
 
