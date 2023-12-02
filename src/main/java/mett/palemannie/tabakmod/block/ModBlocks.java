@@ -28,20 +28,20 @@ public class ModBlocks {
         return toReturn;
     }
 
-    public static final RegistryObject<Block> GETROCKNETER_TABAKBLATT = registerBlock("getrockneter_tabakblatt",
-            () -> new GetrTabakblattBlock(BlockBehaviour.Properties.of(Material.PLANT)
+    public static final RegistryObject<Block> TABAKBLAETTER_GETROCKNET = registerBlock("tabakblaetter_getrocknet",
+            () -> new TabakblaetterStadium4Block(BlockBehaviour.Properties.of(Material.PLANT)
                     .sound(SoundType.VINE).instabreak().noOcclusion()));
-    public static final RegistryObject<Block> FAST_GETROCKNETER_TABAKBLATT = registerBlock("fast_getrockneter_tabakblatt",
-            () -> new FstGetrTabakblattBlock(BlockBehaviour.Properties.of(Material.PLANT)
+    public static final RegistryObject<Block> TABAKBLAETTER_FAST_GETROCKNET = registerBlock("tabakblaetter_fast_getrocknet",
+            () -> new TabakblaetterStadium3Block(BlockBehaviour.Properties.of(Material.PLANT)
                     .sound(SoundType.VINE).instabreak().noOcclusion()));
-    public static final RegistryObject<Block> HALB_GETROCKNETER_TABAKBLATT = registerBlock("halb_getrockneter_tabakblatt",
-            () -> new HlbGetrTabakblattBlock(BlockBehaviour.Properties.of(Material.PLANT)
+    public static final RegistryObject<Block> TABAKBLAETTER_HALB_GETROCKNET = registerBlock("tabakblaetter_halb_getrocknet",
+            () -> new TabakblaetterStadium2Block(BlockBehaviour.Properties.of(Material.PLANT)
                     .sound(SoundType.VINE).instabreak().noOcclusion()));
-    public static final RegistryObject<Block> LEICHT_GETROCKNETER_TABAKBLATT = registerBlock("leicht_getrockneter_tabakblatt",
-            () -> new LchtGetrTabakBlattBlock(BlockBehaviour.Properties.of(Material.PLANT)
+    public static final RegistryObject<Block> TABAKBLAETTER_TEIL_GETROCKNET = registerBlock("tabakblaetter_teil_getrocknet",
+            () -> new TabakblaetterStadium1Block(BlockBehaviour.Properties.of(Material.PLANT)
                     .sound(SoundType.VINE).instabreak().noOcclusion()));
-    public static final RegistryObject<Block> ROHER_TABAKBLATT = registerBlock("roher_tabakblatt",
-            () -> new TabakBlattBlock(BlockBehaviour.Properties.of(Material.PLANT)
+    public static final RegistryObject<Block> TABAKBLAETTER = registerBlock("tabakblaetter",
+            () -> new TabakblaetterStadium0Block(BlockBehaviour.Properties.of(Material.PLANT)
                     .sound(SoundType.VINE).instabreak().noOcclusion()));
 
     public static final RegistryObject<Block> GETROCKNETER_TABAKBALLEN = registerBlock("getrockneter_tabakballen",

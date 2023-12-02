@@ -34,11 +34,11 @@
   "item.tabakmod.deckblatt": "Deckblatt",
 
   "block.tabakmod.tabakpflanze": "Tabakpflanze",
-  "block.tabakmod.getrockneter_tabakblatt": "Getrocknete Tabakblätter",
-  "block.tabakmod.fast_getrockneter_tabakblatt": "Fast getrocknete Tabakblätter",
-  "block.tabakmod.halb_getrockneter_tabakblatt": "Halb getrocknete Tabakblätter",
-  "block.tabakmod.leicht_getrockneter_tabakblatt": "Leicht getrocknete Tabakblätter",
-  "block.tabakmod.roher_tabakblatt": "Tabakblätter",
+  "block.tabakmod.tabakblaetter_getrocknet": "Getrocknete Tabakblätter",
+  "block.tabakmod.tabakblaetter_fast_getrocknet": "Fast getrocknete Tabakblätter",
+  "block.tabakmod.tabakblaetter_halb_getrocknet": "Halb getrocknete Tabakblätter",
+  "block.tabakmod.tabakblaetter_teil_getrocknet": "Leicht getrocknete Tabakblätter",
+  "block.tabakmod.tabakblaetter": "Tabakblätter",
 
   "block.tabakmod.getrockneter_tabakballen": "Getrockneter Tabakballen",
   "block.tabakmod.heller_tabakballen": "Heller Tabakballen",

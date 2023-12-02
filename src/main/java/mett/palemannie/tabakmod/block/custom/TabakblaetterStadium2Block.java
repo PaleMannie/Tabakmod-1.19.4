@@ -17,14 +17,13 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class LchtGetrTabakBlattBlock extends Block {
+public class TabakblaetterStadium2Block extends Block {
     //------------------------------------------------------------------------------------------------------------------
-    public LchtGetrTabakBlattBlock(Properties pProperties) {
+    public TabakblaetterStadium2Block(Properties pProperties) {
         super(pProperties);
     }
 
-    public static final VoxelShape SHAPE = Block.box(0.5d,0d,0.5d, 15.5d, 1d, 15.5d);
-
+    public static final VoxelShape SHAPE = Block.box(0d,0d,0d, 16d, 4d, 16d);
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return SHAPE;
@@ -61,7 +60,7 @@ public class LchtGetrTabakBlattBlock extends Block {
     public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
         float chance = 0.075f;
         if(chance >= pRandom.nextFloat() && pLevel.isDay() && pLevel.canSeeSky(pPos) && !pLevel.isRaining()){
-            pLevel.setBlockAndUpdate(pPos, ModBlocks.HALB_GETROCKNETER_TABAKBLATT.get().defaultBlockState());
+            pLevel.setBlockAndUpdate(pPos, ModBlocks.TABAKBLAETTER_FAST_GETROCKNET.get().defaultBlockState());
             pLevel.playSound(null, pPos, SoundEvents.LEASH_KNOT_BREAK, SoundSource.BLOCKS,1f,1f);
         }
 
@@ -74,7 +73,7 @@ public class LchtGetrTabakBlattBlock extends Block {
         float px = pRandom.nextFloat();
         float pz = pRandom.nextFloat();
         if(chance >= pRandom.nextFloat() && pLevel.isDay() && pLevel.canSeeSky(pPos) && !pLevel.isRaining()){
-            pLevel.addParticle(ParticleTypes.CRIT, pPos.getX()+px, pPos.getY()+0.05f, pPos.getZ()+pz, 0, 0.2d, 0);
+            pLevel.addParticle(ParticleTypes.CRIT, pPos.getX()+px, pPos.getY()+0.15f, pPos.getZ()+pz, 0, 0.2d, 0);
         }
         super.animateTick(pState, pLevel, pPos, pRandom);
     }

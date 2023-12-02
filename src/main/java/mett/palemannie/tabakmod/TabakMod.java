@@ -64,11 +64,11 @@ public class TabakMod
             event.accept(ModItems.MITTLERER_TABAK);
             event.accept(ModItems.DUNKLER_TABAK);
 
-            event.accept(ModBlocks.ROHER_TABAKBLATT);
-            event.accept(ModBlocks.LEICHT_GETROCKNETER_TABAKBLATT);
-            event.accept(ModBlocks.HALB_GETROCKNETER_TABAKBLATT);
-            event.accept(ModBlocks.FAST_GETROCKNETER_TABAKBLATT);
-            event.accept(ModBlocks.GETROCKNETER_TABAKBLATT);
+            event.accept(ModBlocks.TABAKBLAETTER);
+            event.accept(ModBlocks.TABAKBLAETTER_TEIL_GETROCKNET);
+            event.accept(ModBlocks.TABAKBLAETTER_HALB_GETROCKNET);
+            event.accept(ModBlocks.TABAKBLAETTER_FAST_GETROCKNET);
+            event.accept(ModBlocks.TABAKBLAETTER_GETROCKNET);
 
             event.accept(ModBlocks.GETROCKNETER_TABAKBALLEN);
             event.accept(ModBlocks.HELLER_TABAKBALLEN);

@@ -33,11 +33,11 @@
   "item.tabakmod.deckblatt": "Wrapper Leaf",
 
   "block.tabakmod.tabakpflanze": "Tobacco Plant",
-  "block.tabakmod.getrockneter_tabakblatt": "Dried Tobacco Leaves",
-  "block.tabakmod.fast_getrockneter_tabakblatt": "Nearly dried Tobacco Leaves",
-  "block.tabakmod.halb_getrockneter_tabakblatt": "Half dried Tobacco Leaves",
-  "block.tabakmod.leicht_getrockneter_tabakblatt": "Lightly dried Tobacco Leaves",
-  "block.tabakmod.roher_tabakblatt": "Tobacco Leaves",
+  "block.tabakmod.tabakblaetter_getrocknet": "Dried Tobacco Leaves",
+  "block.tabakmod.tabakblaetter_fast_getrocknet": "Nearly dried Tobacco Leaves",
+  "block.tabakmod.tabakblaetter_halb_getrocknet": "Half dried Tobacco Leaves",
+  "block.tabakmod.tabakblaetter_teil_getrocknet": "Lightly dried Tobacco Leaves",
+  "block.tabakmod.tabakblaetter": "Tobacco Leaves",
 
   "block.tabakmod.getrockneter_tabakballen": "Dried Tobacco Bale",
   "block.tabakmod.heller_tabakballen": "Bright Tobacco Bale",

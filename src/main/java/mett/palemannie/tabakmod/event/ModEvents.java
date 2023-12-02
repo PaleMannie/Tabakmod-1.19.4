@@ -253,7 +253,7 @@ public class ModEvents {
 //////////////////////////////////////////////////////////BAUER/////////////////////////////////////////////////////////////////////////////////////////
         if(event.getType() == VillagerProfession.FARMER){
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack eingabe =new ItemStack(ModBlocks.GETROCKNETER_TABAKBLATT.get(), 4);
+            ItemStack eingabe =new ItemStack(ModBlocks.TABAKBLAETTER_GETROCKNET.get(), 4);
             ItemStack ausgabe = new ItemStack(Items.EMERALD, 4);
             int villagerLevel = 1;
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(eingabe, ausgabe, 10, 1, 0.02f));
@@ -274,9 +274,9 @@ public class ModEvents {
         }
         if(event.getType() == VillagerProfession.FARMER){
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack eingabe =new ItemStack(ModBlocks.ROHER_TABAKBLATT.get(), 4);
+            ItemStack eingabe =new ItemStack(ModBlocks.TABAKBLAETTER.get(), 4);
             ItemStack eingabe2 = new ItemStack(Items.EMERALD, 4);
-            ItemStack ausgabe = new ItemStack(ModBlocks.GETROCKNETER_TABAKBLATT.get(), 4);
+            ItemStack ausgabe = new ItemStack(ModBlocks.TABAKBLAETTER_GETROCKNET.get(), 4);
             int villagerLevel = 2;
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(eingabe, ausgabe, eingabe2, 10, 2, 0.02f));
         }
