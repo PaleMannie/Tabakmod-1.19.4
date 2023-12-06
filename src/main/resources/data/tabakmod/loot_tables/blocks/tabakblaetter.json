@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tabakmod:fast_getrockneter_tabakblatt"
+          "name": "tabakmod:tabakblaetter"
         }
       ],
       "rolls": 1.0

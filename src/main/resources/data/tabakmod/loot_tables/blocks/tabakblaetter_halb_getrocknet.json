@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tabakmod:leicht_getrockneter_tabakblatt"
+          "name": "tabakmod:tabakblaetter_halb_getrocknet"
         }
       ],
       "rolls": 1.0
