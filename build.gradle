@@ -5,7 +5,7 @@ plugins {
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
-version = 'v0.27_1.19.4'
+version = 'v1.0_1.19.4'
 group = 'mett.palemannie.tabakmod' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'supertabakmod'
 
