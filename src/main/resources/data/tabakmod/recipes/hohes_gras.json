@@ -2,17 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "tabakmod:tabakblaetter_getrocknet"
+    "G": {
+      "item": "minecraft:grass"
     }
   },
   "pattern": [
-    "###",
-    "###",
-    "###"
+    "G",
+    "G",
+    "G"
   ],
   "result": {
-    "item": "tabakmod:getrockneter_tabakballen"
+    "item": "minecraft:tall_grass"
   },
   "show_notification": true
 }
