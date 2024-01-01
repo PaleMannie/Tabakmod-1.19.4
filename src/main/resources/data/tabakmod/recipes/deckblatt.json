@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "tabakmod:getrockneter_tabakblatt"
+      "item": "tabakmod:tabakblaetter_getrocknet"
     },
     {
       "item": "minecraft:paper"
