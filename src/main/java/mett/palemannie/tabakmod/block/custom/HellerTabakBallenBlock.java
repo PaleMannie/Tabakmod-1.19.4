@@ -40,7 +40,7 @@ public class HellerTabakBallenBlock extends Block {
 
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        float chance = 0.4f;
+        float chance = 0.6f;
         double dx = random.nextGaussian() * 0.055d;
         double dy = random.nextGaussian() * 0.06d;
         double dz = random.nextGaussian() * 0.055d;

@@ -58,7 +58,7 @@ public class TabakblaetterStadium1Block extends Block {
 
     @Override
     public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
-        float chance = 0.075f;
+        float chance = 0.05f;
         if(chance >= pRandom.nextFloat() && pLevel.isDay() && pLevel.canSeeSky(pPos) && !pLevel.isRaining()){
             pLevel.setBlockAndUpdate(pPos, ModBlocks.TABAKBLAETTER_HALB_GETROCKNET.get().defaultBlockState());
             pLevel.playSound(null, pPos, SoundEvents.LEASH_KNOT_BREAK, SoundSource.BLOCKS,1f,1f);

@@ -10,6 +10,8 @@ import mett.palemannie.tabakmod.util.ModItemProperties;
 import mett.palemannie.tabakmod.villager.ModVillagers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -47,6 +49,10 @@ public class TabakMod
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork( ()-> {
             ModVillagers.registerPOIs();
+        });
+        event.enqueueWork( ()-> {
+            ComposterBlock.COMPOSTABLES.put(ModItems.TABAKBLATT.get(),0.4f);
+            ComposterBlock.COMPOSTABLES.put(ModItems.TABAKSAMEN.get(),0.3f);
         });
     }
 
