@@ -27,6 +27,7 @@ public class SpuckenEffect extends MobEffect {
 
     @Override
     public void applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
+
         counter--;
         if(counter % basis == 0) {
             ModMessages.sendToServer(new SpuckenC2SPacket());

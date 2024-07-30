@@ -65,7 +65,7 @@ public class TabakMod {
         if(event.getTab() == ModCreativeModeTabs.TABAK_TAB) {
 
             event.accept(ModItems.TABAKSAMEN);
-            event.accept(ModItems.TABAKBLATT);
+            event.accept(ModItems.TABAKBLATT);//
 
             event.accept(ModItems.TROCKENER_TABAK);
             event.accept(ModItems.HELLER_TABAK_BEHANDELT);

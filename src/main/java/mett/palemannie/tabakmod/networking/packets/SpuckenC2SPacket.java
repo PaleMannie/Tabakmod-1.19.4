@@ -19,6 +19,7 @@ public class SpuckenC2SPacket {
     }
 
     public boolean handle(Supplier<NetworkEvent.Context> supplier){
+
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(()-> {
 

@@ -11,6 +11,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 public class ClientEvents {
+
     @Mod.EventBusSubscriber(modid = TabakMod.MODID, value = Dist.CLIENT)
     public static class ClientForgeEvents{
         @SubscribeEvent

@@ -38,6 +38,7 @@ public class KautabakItem extends Item implements IForgeMobEffect {
         if(pLivingEntity instanceof Player player) {
             gibEffekt(player, 200);
             pStack.shrink(1);
+
         }
         return super.finishUsingItem(pStack, pLevel, pLivingEntity);
     }

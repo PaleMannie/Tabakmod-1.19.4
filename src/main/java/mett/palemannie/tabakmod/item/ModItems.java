@@ -63,7 +63,7 @@ public class ModItems
     public static final RegistryObject<Item> DECKBLATT = ITEMS.register("deckblatt",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> PFEIFE = ITEMS.register("pfeife",
-            () -> new PfeifenItem(new Item.Properties().durability(250)));
+            () -> new PfeifenItem(new Item.Properties().durability(220)));
     public static final RegistryObject<Item> PFEIFE_LEER = ITEMS.register("pfeife_leer",
             () -> new LeerePfeifenItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> ZIGARETTE_MENTHOL = ITEMS.register("zigarette_menthol",
