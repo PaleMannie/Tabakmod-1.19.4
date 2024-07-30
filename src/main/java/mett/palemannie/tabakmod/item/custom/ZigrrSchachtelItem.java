@@ -29,7 +29,6 @@ public class ZigrrSchachtelItem extends ZigSchachtelItem{
             pPlayer.playSound(SoundEvents.WOOD_BREAK,4f,1);
             pPlayer.stopUsingItem();
         }
-        //FÜGE NOCH CUSTOM TÖNE HINZU
         pPlayer.playSound(SoundEvents.ARMOR_EQUIP_CHAIN);
         pPlayer.addItem(zigrr);
         pPlayer.stopUsingItem();

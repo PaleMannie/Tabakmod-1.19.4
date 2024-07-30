@@ -43,7 +43,6 @@ public class ZigSchachtelItem extends Item {
             pPlayer.playSound(SoundEvents.BOOK_PAGE_TURN);
             pPlayer.stopUsingItem();
         }
-        //FÜGE NOCH CUSTOM TÖNE HINZU
         pPlayer.playSound(SoundEvents.CHAIN_PLACE);
         if(this == ModItems.ZIGARETTENSCHACHTEL_MENTHOL.get()){pPlayer.addItem(zig_menthol);} else pPlayer.addItem(zig);
         pPlayer.stopUsingItem();
