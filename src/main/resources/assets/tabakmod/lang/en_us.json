@@ -21,6 +21,7 @@
   "item.tabakmod.zigarettenschachtel_menthol_leer": "Empty Menthol Cigarette Pack",
   "item.tabakmod.zigarette_scheise": "Shit Cigarette",
   "item.tabakmod.dschoint": "Joint",
+  "item.tabakmod.kautabak": "Chewing Tobacco",
 
   "item.tabakmod.trockener_tabak": "Dried Tobacco",
   "item.tabakmod.heller_tabak": "Bright Tobacco",
@@ -58,7 +59,35 @@
   "sounds.tabakmod.pfeife_laden": "Pipe being stuffed",
   "sounds.tabakmod.sounds.tabakmod.scheise_geraucht": "Shit Cigarette has been smoked",
   "sounds.tabakmod.dschoint": "DUDE, WEED LMAO",
-  "sounds.tabakmod.scheisezig": "Chinese cigarettes have an effect",
+  "sounds.tabakmod.scheisezig": "Chinese cigarettes are working",
+
+  "painting.tabakmod.saschigalka.title": "Here, there's your fire",
+  "painting.tabakmod.saschigalka.author": "Ostrov Sokrovish",
+  "painting.tabakmod.eto_jad.title": "Thats poison. t.poison frogs",
+  "painting.tabakmod.eto_jad.author": "Ostrov Sokrovish",
+  "painting.tabakmod.kurenje_rasrischinno.title": "Smoking allowed",
+  "painting.tabakmod.kurenje_rasrischinno.author": "Pale Mannie",
+  "painting.tabakmod.god_bil_1943.title": "The year was 1943",
+  "painting.tabakmod.god_bil_1943.author": "u m a m i",
+  "painting.tabakmod.fisikalnost.title": "I was forced to end my physicality",
+  "painting.tabakmod.fisikalnost.author": "u m a m i",
+  "painting.tabakmod.ja_kogda_tabakmod.title": "me when tabakmod",
+  "painting.tabakmod.ja_kogda_tabakmod.author": "Knocksschiller",
+  "painting.tabakmod.idu_kuriu1.title": "Exhale №1",
+  "painting.tabakmod.idu_kuriu1.author": "Gruppa Nol'",
+  "painting.tabakmod.idu_kuriu2.title": "Silhouette smoking",
+  "painting.tabakmod.idu_kuriu2.author": "Gruppa Nol'",
+  "painting.tabakmod.idu_kuriu3.title": "Exhale №2",
+  "painting.tabakmod.idu_kuriu3.author": "Gruppa Nol'",
+  "painting.tabakmod.idu_kuriu4.title": "Exhale №3",
+  "painting.tabakmod.idu_kuriu4.author": "Gruppa Nol'",
+  "painting.tabakmod.idu_kuriu5.title": "going.... smoking",
+  "painting.tabakmod.idu_kuriu5.author": "Gruppa Nol'",
+
+  "effect.tabakmod.spucken": "Spitting",
+
+  "key.category.tabakmod.spucken": "Tobacco Mod Keys",
+  "key.tabakmod.spucken": "Spit",
 
   "creativemodetab.tabak_tab": "Super Tobacco Mod"
 }

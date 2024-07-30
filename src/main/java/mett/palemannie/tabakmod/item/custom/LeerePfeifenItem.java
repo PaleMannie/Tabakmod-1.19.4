@@ -20,13 +20,12 @@ public class LeerePfeifenItem extends Item {
 ////////////////////////////////////////////EIGENE METHODEN/////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////NUTZMETHODEN////////////////////////////////////////////////////////////////
-
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         ItemStack itemstack = pPlayer.getItemInHand(pUsedHand);
         ItemStack derPassendeTabak = new ItemStack(ModItems.MITTLERER_TABAK_BEHANDELT.get());
         boolean istTabakImInventar = pPlayer.getInventory().contains(derPassendeTabak);
-        if(istTabakImInventar){
+        if(istTabakImInventar || pPlayer.isCreative()){
             pPlayer.startUsingItem(pUsedHand);
             RandomSource rdm = RandomSource.create();
             float r = (float)rdm.nextInt(8,12)/10;
@@ -51,12 +50,15 @@ public class LeerePfeifenItem extends Item {
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
         ItemStack tbk = new ItemStack(ModItems.MITTLERER_TABAK_BEHANDELT.get());
         if(pLivingEntity instanceof Player pPlayer){
+            if(!pPlayer.isCreative()){
             pPlayer.getInventory().removeItem(pPlayer.getInventory().findSlotMatchingItem(tbk),1);
+            }
             InteractionHand pHand = pPlayer.getUsedItemHand();
             pPlayer.setItemInHand(pHand, new ItemStack(ModItems.PFEIFE.get()));
             RandomSource rdm = RandomSource.create();
             float r = (float)rdm.nextInt(8,12)/10;
             pPlayer.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP, 1f,r);
+
         }
         return super.finishUsingItem(pStack, pLevel, pLivingEntity);
     }
@@ -65,7 +67,6 @@ public class LeerePfeifenItem extends Item {
     public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity, int pTimeCharged) {
         super.releaseUsing(pStack, pLevel, pLivingEntity, pTimeCharged);
     }
-
 //////////////////////////////////////////////SONSTIGE METHODEN/////////////////////////////////////////////////////////
     @Override
     public UseAnim getUseAnimation(ItemStack pStack) { return UseAnim.BRUSH; }

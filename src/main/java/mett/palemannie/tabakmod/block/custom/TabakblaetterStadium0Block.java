@@ -7,7 +7,10 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -16,6 +19,8 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.fml.common.Mod;
+import org.jetbrains.annotations.Nullable;
 
 public class TabakblaetterStadium0Block extends Block {
     //------------------------------------------------------------------------------------------------------------------
@@ -30,7 +35,12 @@ public class TabakblaetterStadium0Block extends Block {
     //------------------------------------------------------------------------------------------------------------------
     @Override
     public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
-        return !pLevel.isEmptyBlock(pPos.below());
+        return !pLevel.isEmptyBlock(pPos.below())
+                && !pLevel.getBlockState(pPos.below()).is(ModBlocks.TABAKBLAETTER.get())
+                && !pLevel.getBlockState(pPos.below()).is(ModBlocks.TABAKBLAETTER_TEIL_GETROCKNET.get())
+                && !pLevel.getBlockState(pPos.below()).is(ModBlocks.TABAKBLAETTER_HALB_GETROCKNET.get())
+                && !pLevel.getBlockState(pPos.below()).is(ModBlocks.TABAKBLAETTER_FAST_GETROCKNET.get())
+                && !pLevel.getBlockState(pPos.below()).is(ModBlocks.TABAKBLAETTER_GETROCKNET.get());
     }
     @Override
     public boolean propagatesSkylightDown(BlockState pState, BlockGetter pReader, BlockPos pPos) {
@@ -75,5 +85,4 @@ public class TabakblaetterStadium0Block extends Block {
         }
         super.animateTick(pState, pLevel, pPos, pRandom);
     }
-
 }

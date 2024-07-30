@@ -76,6 +76,8 @@ public class ModItems
             () -> new ScheisZigarettenItem(new Item.Properties().durability(100)));
     public static final RegistryObject<Item> DSCHOINT = ITEMS.register("dschoint",
             () -> new DschointItem(new Item.Properties().durability(200)));
+    public static final RegistryObject<Item> KAUTABAK = ITEMS.register("kautabak",
+            () -> new KautabakItem(new Item.Properties()));
 
     public static void register(IEventBus eventBus)
     {

@@ -2,15 +2,17 @@ package mett.palemannie.tabakmod;
 
 import com.mojang.logging.LogUtils;
 import mett.palemannie.tabakmod.block.ModBlocks;
+import mett.palemannie.tabakmod.effect.ModEffects;
 import mett.palemannie.tabakmod.item.ModCreativeModeTabs;
 import mett.palemannie.tabakmod.item.ModItems;
 import mett.palemannie.tabakmod.loot.ModLootModifiers;
+import mett.palemannie.tabakmod.networking.ModMessages;
+import mett.palemannie.tabakmod.paintings.ModPaintings;
 import mett.palemannie.tabakmod.sound.ModSounds;
 import mett.palemannie.tabakmod.util.ModItemProperties;
 import mett.palemannie.tabakmod.villager.ModVillagers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -25,8 +27,7 @@ import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(TabakMod.MODID)
-public class TabakMod
-{
+public class TabakMod {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "tabakmod";
     // Directly reference a slf4j logger
@@ -38,21 +39,25 @@ public class TabakMod
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModLootModifiers.register(modEventBus);
         ModVillagers.register(modEventBus);
         ModSounds.register(modEventBus);
+        ModPaintings.register(modEventBus);
+        ModEffects.register(modEventBus);
 
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork( ()-> {
+            ModMessages.register();
             ModVillagers.registerPOIs();
         });
         event.enqueueWork( ()-> {
-            ComposterBlock.COMPOSTABLES.put(ModItems.TABAKBLATT.get(),0.4f);
-            ComposterBlock.COMPOSTABLES.put(ModItems.TABAKSAMEN.get(),0.3f);
+            ComposterBlock.COMPOSTABLES.put(ModItems.TABAKBLATT.get(),0.3f);
+            ComposterBlock.COMPOSTABLES.put(ModItems.TABAKSAMEN.get(),0.2f);
         });
     }
 
@@ -80,6 +85,8 @@ public class TabakMod
             event.accept(ModBlocks.HELLER_TABAKBALLEN);
             event.accept(ModBlocks.MITTLERER_TABAKBALLEN);
             event.accept(ModBlocks.DUNKLER_TABAKBALLEN);
+
+            event.accept(ModItems.KAUTABAK);
 
             event.accept(ModItems.ZIGARETTE);
             event.accept(ModItems.ZIGARETTE_MENTHOL);

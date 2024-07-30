@@ -31,7 +31,12 @@ public class TabakblaetterStadium3Block extends Block {
     //------------------------------------------------------------------------------------------------------------------
     @Override
     public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
-        return !pLevel.isEmptyBlock(pPos.below());
+        return !pLevel.isEmptyBlock(pPos.below())
+                && !pLevel.getBlockState(pPos.below()).is(ModBlocks.TABAKBLAETTER.get())
+                && !pLevel.getBlockState(pPos.below()).is(ModBlocks.TABAKBLAETTER_TEIL_GETROCKNET.get())
+                && !pLevel.getBlockState(pPos.below()).is(ModBlocks.TABAKBLAETTER_HALB_GETROCKNET.get())
+                && !pLevel.getBlockState(pPos.below()).is(ModBlocks.TABAKBLAETTER_FAST_GETROCKNET.get())
+                && !pLevel.getBlockState(pPos.below()).is(ModBlocks.TABAKBLAETTER_GETROCKNET.get());
     }
     @Override
     public boolean propagatesSkylightDown(BlockState pState, BlockGetter pReader, BlockPos pPos) {
