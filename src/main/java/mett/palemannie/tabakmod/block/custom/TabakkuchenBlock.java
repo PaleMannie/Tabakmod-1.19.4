@@ -1,5 +1,6 @@
 package mett.palemannie.tabakmod.block.custom;
 
+import mett.palemannie.tabakmod.effect.ModEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -8,6 +9,8 @@ import net.minecraft.stats.Stats;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -37,7 +40,7 @@ public class TabakkuchenBlock extends Block {
     public static final IntegerProperty BISSE = IntegerProperty.create("bisse", 0, MAX_BISSE);
     public static final int FULL_CAKE_SIGNAL = getOutputSignal(0);
     public static int getOutputSignal(int pEaten) {
-        return (pEaten + 2);
+        return (15 - pEaten);
     }
     protected static final float AABB_OFFSET = 1.0F;
     protected static final float AABB_SIZE_PER_BITE = 2.0F;
@@ -108,6 +111,10 @@ public class TabakkuchenBlock extends Block {
                 pLevel.removeBlock(pPos, false);
                 pLevel.gameEvent(pPlayer, GameEvent.BLOCK_DESTROY, pPos);
             }
+
+            pPlayer.addEffect(new MobEffectInstance(ModEffects.SPUCKEN.get(), 200, 0));
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 200, 0));
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100, 0));
 
             return InteractionResult.SUCCESS;
         }
