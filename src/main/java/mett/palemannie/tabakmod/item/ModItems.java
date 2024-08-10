@@ -78,6 +78,8 @@ public class ModItems
             () -> new DschointItem(new Item.Properties().durability(200)));
     public static final RegistryObject<Item> KAUTABAK = ITEMS.register("kautabak",
             () -> new KautabakItem(new Item.Properties()));
+    public static final RegistryObject<Item> KAUTABAKMISCHE = ITEMS.register("kautabakmische",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus)
     {

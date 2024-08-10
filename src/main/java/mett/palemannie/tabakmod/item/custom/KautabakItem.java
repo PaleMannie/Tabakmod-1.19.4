@@ -1,10 +1,11 @@
 package mett.palemannie.tabakmod.item.custom;
 
 import mett.palemannie.tabakmod.effect.ModEffects;
-import mett.palemannie.tabakmod.sound.ModSounds;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,6 +22,8 @@ public class KautabakItem extends Item implements IForgeMobEffect {
 ////////////////////////////////////////////////////EIGENE METHODEN/////////////////////////////////////////////////////
     void gibEffekt(Player player, int zeit){
         player.addEffect(new MobEffectInstance(ModEffects.SPUCKEN.get(), zeit, 0));
+        player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100, 0));
+        player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, zeit, 0));
     }
 ////////////////////////////////////////////////////NUTZMETHODEN////////////////////////////////////////////////////////
     @Override
@@ -36,8 +39,12 @@ public class KautabakItem extends Item implements IForgeMobEffect {
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
         if(pLivingEntity instanceof Player player) {
-            gibEffekt(player, 200);
-            pStack.shrink(1);
+            player.playSound(SoundEvents.SLIME_JUMP, 3f, 1f);
+            player.getFoodData().eat(2, 2);
+            gibEffekt(player, 400);
+            if(!((Player) pLivingEntity).isCreative()){
+                pStack.shrink(1);
+            }
 
         }
         return super.finishUsingItem(pStack, pLevel, pLivingEntity);

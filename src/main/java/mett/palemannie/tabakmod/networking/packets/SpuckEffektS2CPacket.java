@@ -24,6 +24,8 @@ public class SpuckEffektS2CPacket {
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(()-> {
 
+            //Attempted to load class net/minecraft/client/player/LocalPlayer for invalid dist DEDICATED_SERVER
+
             Player player = Minecraft.getInstance().player;
             Level level = Minecraft.getInstance().level;
 

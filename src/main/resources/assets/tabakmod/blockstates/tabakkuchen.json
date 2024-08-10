@@ -1,0 +1,46 @@
+{
+  "variants": {
+    "bisse=0": {
+      "model": "tabakmod:block/tabakkuchen"
+    },
+    "bisse=1": {
+      "model": "tabakmod:block/tabakkuchen_schnitt1"
+    },
+    "bisse=2": {
+      "model": "tabakmod:block/tabakkuchen_schnitt2"
+    },
+    "bisse=3": {
+      "model": "tabakmod:block/tabakkuchen_schnitt3"
+    },
+    "bisse=4": {
+      "model": "tabakmod:block/tabakkuchen_schnitt4"
+    },
+    "bisse=5": {
+      "model": "tabakmod:block/tabakkuchen_schnitt5"
+    },
+    "bisse=6": {
+      "model": "tabakmod:block/tabakkuchen_schnitt6"
+    },
+    "bisse=7": {
+      "model": "tabakmod:block/tabakkuchen_schnitt7"
+    },
+    "bisse=8": {
+      "model": "tabakmod:block/tabakkuchen_schnitt8"
+    },
+    "bisse=9": {
+      "model": "tabakmod:block/tabakkuchen_schnitt9"
+    },
+    "bisse=10": {
+      "model": "tabakmod:block/tabakkuchen_schnitt10"
+    },
+    "bisse=11": {
+      "model": "tabakmod:block/tabakkuchen_schnitt11"
+    },
+    "bisse=12": {
+      "model": "tabakmod:block/tabakkuchen_schnitt12"
+    },
+    "bisse=13": {
+      "model": "tabakmod:block/tabakkuchen_schnitt13"
+    }
+  }
+}

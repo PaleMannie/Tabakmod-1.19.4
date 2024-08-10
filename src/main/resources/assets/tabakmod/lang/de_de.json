@@ -22,6 +22,7 @@
   "item.tabakmod.zigarette_scheise": "Scheißzigarette",
   "item.tabakmod.dschoint": "Dübel",
   "item.tabakmod.kautabak": "Kautabak",
+  "item.tabakmod.kautabakmische": "Gesoßter Tabak",
 
   "item.tabakmod.trockener_tabak": "Trockener Tabak",
   "item.tabakmod.heller_tabak": "Heller Tabak",
@@ -49,6 +50,8 @@
   "block.tabakmod.aschenbecher_zig": "Aschenbecher mit Zigarette",
   "block.tabakmod.aschenbecher_zigrr": "Aschenbecher mit Zigarre",
   "block.tabakmod.aschenbecher_gross": "Großer Aschenbecher",
+
+  "block.tabakmod.tabakkuchen": "Tabakkuchen",
 
   "entity.minecraft.villager.tabakmod.tabakhaendler": "Tabakhändler",
 

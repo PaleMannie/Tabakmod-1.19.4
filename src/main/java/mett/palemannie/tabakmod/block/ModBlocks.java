@@ -27,7 +27,7 @@ public class ModBlocks {
         registerBlockItem(name, toReturn);
         return toReturn;
     }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static final RegistryObject<Block> TABAKBLAETTER_GETROCKNET = registerBlock("tabakblaetter_getrocknet",
             () -> new TabakblaetterStadium4Block(BlockBehaviour.Properties.of(Material.PLANT)
                     .sound(SoundType.VINE).instabreak().noOcclusion()));
@@ -68,6 +68,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> ASCHENBECHER_GROSS = registerBlock("aschenbecher_gross",
             () -> new AschenbecherGrossBlock(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.STONE).instabreak().noOcclusion()));
 
+    public static final RegistryObject<Block> TABAKKUCHEN = registerBlock("tabakkuchen",
+            () -> new TabakkuchenBlock(BlockBehaviour.Properties.of(Material.CAKE).strength(0.5f).noOcclusion().sound(SoundType.SLIME_BLOCK)));
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
                 new Item.Properties()));

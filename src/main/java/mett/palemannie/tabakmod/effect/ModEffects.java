@@ -12,7 +12,7 @@ public class ModEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS
             = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, TabakMod.MODID);
 
-    public static final RegistryObject<MobEffect> SPUCKEN = MOB_EFFECTS.register("spucken", ()-> new SpuckenEffect(MobEffectCategory.NEUTRAL, 10813239));
+    public static final RegistryObject<MobEffect> SPUCKEN = MOB_EFFECTS.register("spucken", ()-> new SpuckenEffect(MobEffectCategory.NEUTRAL, 11924987));
 
     public static void register(IEventBus eventBus){
         MOB_EFFECTS.register(eventBus);

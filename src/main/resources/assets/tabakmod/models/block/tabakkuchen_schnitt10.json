@@ -1,0 +1,23 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "tabakmod:block/tabakkuchen_schnitt10",
+		"particle": "tabakmod:block/tabakkuchen_schnitt10"
+	},
+	"elements": [
+		{
+			"from": [11, 0, 1],
+			"to": [15, 6, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [13, 0, 1]},
+			"faces": {
+				"north": {"uv": [3.5, 3.5, 4.5, 5], "texture": "#0"},
+				"east": {"uv": [0, 3.5, 3.5, 5], "texture": "#0"},
+				"south": {"uv": [8, 3.5, 9, 5], "texture": "#0"},
+				"west": {"uv": [4.5, 3.5, 8, 5], "texture": "#0"},
+				"up": {"uv": [4.5, 3.5, 3.5, 0], "texture": "#0"},
+				"down": {"uv": [5.5, 0, 4.5, 3.5], "texture": "#0"}
+			}
+		}
+	]
+}

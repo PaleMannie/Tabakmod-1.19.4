@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smoking",
+  "category": "misc",
+  "cookingtime": 800,
+  "experience": 0.5,
+  "ingredient": {
+    "item": "tabakmod:kautabakmische"
+  },
+  "result": {
+    "count": 3,
+    "item": "tabakmod:kautabak"
+  }
+}

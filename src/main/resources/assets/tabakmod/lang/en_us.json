@@ -22,6 +22,7 @@
   "item.tabakmod.zigarette_scheise": "Shit Cigarette",
   "item.tabakmod.dschoint": "Joint",
   "item.tabakmod.kautabak": "Chewing Tobacco",
+  "item.tabakmod.kautabakmische": "Sauced Tobacco",
 
   "item.tabakmod.trockener_tabak": "Dried Tobacco",
   "item.tabakmod.heller_tabak": "Bright Tobacco",
@@ -49,6 +50,8 @@
   "block.tabakmod.aschenbecher_zig": "Ash Tray with Cigarette",
   "block.tabakmod.aschenbecher_zigrr": "Ash Tray with Cigar",
   "block.tabakmod.aschenbecher_gross": "Big Ash Tray",
+
+  "block.tabakmod.tabakkuchen": "Tobacco Cake",
 
   "entity.minecraft.villager.tabakmod.tabakhaendler": "Tobacco Merchant",
 
