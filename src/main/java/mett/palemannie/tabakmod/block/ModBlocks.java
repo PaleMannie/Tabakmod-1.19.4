@@ -70,6 +70,8 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> TABAKKUCHEN = registerBlock("tabakkuchen",
             () -> new TabakkuchenBlock(BlockBehaviour.Properties.of(Material.CAKE).strength(0.5f).noOcclusion().sound(SoundType.SLIME_BLOCK)));
+    public static final RegistryObject<Block> TABAKKUCHEN_ZIG = registerBlock("tabakkuchen_zig",
+            () -> new TabakkuchenZigBlock(BlockBehaviour.Properties.of(Material.CAKE).strength(0.5f).noOcclusion().sound(SoundType.SLIME_BLOCK)));
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {

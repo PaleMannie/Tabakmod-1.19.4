@@ -1,35 +1,33 @@
 {
 	"credit": "Made with Blockbench",
-	"ambientocclusion": false,
+	"texture_size": [64, 64],
 	"textures": {
-		"0": "tabakkuchen_ganz",
-		"1": "zig_tabakkuchen_aus",
-		"particle": "tabakkuchen_ganz"
+		"0": "tabakmod:block/tabakkuchen_zig_aus",
+		"particle": "tabakmod:block/tabakkuchen_zig_aus"
 	},
 	"elements": [
+		{
+			"from": [7.5, 6, 7.5],
+			"to": [8.5, 11, 8.5],
+			"faces": {
+				"north": {"uv": [0.25, 0.25, 0.5, 1.5], "texture": "#0"},
+				"east": {"uv": [0, 0.25, 0.25, 1.5], "texture": "#0"},
+				"south": {"uv": [0.75, 0.25, 1, 1.5], "texture": "#0"},
+				"west": {"uv": [0.5, 0.25, 0.75, 1.5], "texture": "#0"},
+				"up": {"uv": [0.5, 0.25, 0.25, 0], "texture": "#0"},
+				"down": {"uv": [0.75, 0, 0.5, 0.25], "texture": "#0"}
+			}
+		},
 		{
 			"from": [1, 0, 1],
 			"to": [15, 6, 15],
 			"faces": {
-				"north": {"uv": [7, 0, 14, 3], "texture": "#0"},
-				"east": {"uv": [7, 3, 14, 6], "texture": "#0"},
-				"south": {"uv": [7, 6, 14, 9], "texture": "#0"},
-				"west": {"uv": [7, 9, 14, 12], "texture": "#0"},
-				"up": {"uv": [7, 7, 0, 0], "texture": "#0"},
-				"down": {"uv": [7, 7, 0, 14], "texture": "#0"}
-			}
-		},
-		{
-			"from": [7.5, 6, 7.5],
-			"to": [8.5, 11, 8.5],
-			"rotation": {"angle": 0, "axis": "y", "origin": [7.5, 6, 7.5]},
-			"faces": {
-				"north": {"uv": [0, 0, 1, 5], "texture": "#1"},
-				"east": {"uv": [1, 0, 2, 5], "texture": "#1"},
-				"south": {"uv": [2, 0, 3, 5], "texture": "#1"},
-				"west": {"uv": [3, 0, 4, 5], "texture": "#1"},
-				"up": {"uv": [5, 1, 4, 0], "texture": "#1"},
-				"down": {"uv": [5, 1, 4, 2], "texture": "#1"}
+				"north": {"uv": [3.5, 3.5, 7, 5], "texture": "#0"},
+				"east": {"uv": [0, 3.5, 3.5, 5], "texture": "#0"},
+				"south": {"uv": [10.5, 3.5, 14, 5], "texture": "#0"},
+				"west": {"uv": [7, 3.5, 10.5, 5], "texture": "#0"},
+				"up": {"uv": [7, 3.5, 3.5, 0], "texture": "#0"},
+				"down": {"uv": [10.5, 0, 7, 3.5], "texture": "#0"}
 			}
 		}
 	]

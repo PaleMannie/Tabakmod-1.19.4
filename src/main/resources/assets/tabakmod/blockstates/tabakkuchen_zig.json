@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=true": {
+      "model": "tabakmod:block/tabakkuchen_zig_an"
+    },
+    "lit=false": {
+      "model": "tabakmod:block/tabakkuchen_zig_aus"
+    }
+  }
+}

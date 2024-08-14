@@ -3,16 +3,11 @@ package mett.palemannie.tabakmod.block.custom;
 import mett.palemannie.tabakmod.effect.ModEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.stats.Stats;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -20,11 +15,8 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CandleBlock;
-import net.minecraft.world.level.block.CandleCakeBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.pathfinder.PathComputationType;
@@ -38,12 +30,9 @@ public class TabakkuchenBlock extends Block {
     }
     public static final int MAX_BISSE = 13;
     public static final IntegerProperty BISSE = IntegerProperty.create("bisse", 0, MAX_BISSE);
-    public static final int FULL_CAKE_SIGNAL = getOutputSignal(0);
     public static int getOutputSignal(int pEaten) {
         return (15 - pEaten);
     }
-    protected static final float AABB_OFFSET = 1.0F;
-    protected static final float AABB_SIZE_PER_BITE = 2.0F;
     protected static final VoxelShape[] SHAPE_BY_BITE = new VoxelShape[]{
             Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D),
             Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D),
@@ -69,21 +58,6 @@ public class TabakkuchenBlock extends Block {
 
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         ItemStack itemstack = pPlayer.getItemInHand(pHand);
-        Item item = itemstack.getItem();
-        /*if (itemstack.is(ItemTags.CANDLES) && pState.getValue(BITES) == 0) {
-            Block block = Block.byItem(item);
-            if (block instanceof CandleBlock) {
-                if (!pPlayer.isCreative()) {
-                    itemstack.shrink(1);
-                }
-
-                pLevel.playSound((Player)null, pPos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0F, 1.0F);
-                pLevel.setBlockAndUpdate(pPos, CandleCakeBlock.byCandle(block));
-                pLevel.gameEvent(pPlayer, GameEvent.BLOCK_CHANGE, pPos);
-                pPlayer.awardStat(Stats.ITEM_USED.get(item));
-                return InteractionResult.SUCCESS;
-            }
-        }*/
 
         if (pLevel.isClientSide) {
             if (eat(pLevel, pPos, pState, pPlayer).consumesAction()) {
@@ -101,7 +75,6 @@ public class TabakkuchenBlock extends Block {
         if (!pPlayer.canEat(false)) {
             return InteractionResult.PASS;
         } else {
-            //pPlayer.awardStat(Stats.EAT_CAKE_SLICE);
             pPlayer.getFoodData().eat(1, 0.1F);
             int i = pState.getValue(BISSE);
             pLevel.gameEvent(pPlayer, GameEvent.EAT, pPos);
