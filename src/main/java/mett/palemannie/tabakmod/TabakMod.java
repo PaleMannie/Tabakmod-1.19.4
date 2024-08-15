@@ -113,8 +113,6 @@ public class TabakMod {
             event.accept(ModItems.DECKBLATT);
 
             event.accept(ModBlocks.ASCHENBECHER);
-            event.accept(ModBlocks.ASCHENBECHER_ZIG);
-            event.accept(ModBlocks.ASCHENBECHER_ZIGRR);
             event.accept(ModBlocks.ASCHENBECHER_GROSS);
 
         }

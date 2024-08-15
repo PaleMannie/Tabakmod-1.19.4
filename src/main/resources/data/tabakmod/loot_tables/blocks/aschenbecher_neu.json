@@ -1,0 +1,60 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tabakmod:zigarre",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "tabakmod:aschenbecher_neu",
+              "properties": {
+                "welchezig": "2"
+              }
+            },
+            {
+              "condition": "minecraft:survives_explosion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tabakmod:zigarette",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "tabakmod:aschenbecher_neu",
+              "properties": {
+                "welchezig": "1"
+              }
+            },
+            {
+              "condition": "minecraft:survives_explosion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tabakmod:aschenbecher_neu",
+          "conditions": [
+            {
+              "condition": "minecraft:survives_explosion"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

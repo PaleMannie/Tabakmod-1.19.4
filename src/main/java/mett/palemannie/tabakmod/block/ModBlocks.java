@@ -59,11 +59,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> TABAKPFLANZE = BLOCKS.register("tabakpflanze",
             () -> new TabakPflanzenBlock(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH)));
-    public static final RegistryObject<Block> ASCHENBECHER = registerBlock("aschenbecher",
-            () -> new AschenbecherBlock(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.STONE).instabreak().noOcclusion()));
-    public static final RegistryObject<Block> ASCHENBECHER_ZIG = registerBlock("aschenbecher_zig",
-            () -> new AschenbecherBlock(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.STONE).instabreak().noOcclusion()));
-    public static final RegistryObject<Block> ASCHENBECHER_ZIGRR = registerBlock("aschenbecher_zigrr",
+    public static final RegistryObject<Block> ASCHENBECHER = registerBlock("aschenbecher_neu",
             () -> new AschenbecherBlock(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.STONE).instabreak().noOcclusion()));
     public static final RegistryObject<Block> ASCHENBECHER_GROSS = registerBlock("aschenbecher_gross",
             () -> new AschenbecherGrossBlock(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.STONE).instabreak().noOcclusion()));

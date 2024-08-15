@@ -2,7 +2,6 @@ package mett.palemannie.tabakmod.block.custom;
 
 import mett.palemannie.tabakmod.block.ModBlocks;
 import mett.palemannie.tabakmod.item.ModItems;
-import mett.palemannie.tabakmod.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -37,7 +36,6 @@ public class TabakkuchenZigBlock extends Block {
     }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     public static final BooleanProperty LIT = BooleanProperty.create("lit");
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
@@ -47,7 +45,28 @@ public class TabakkuchenZigBlock extends Block {
     protected static final VoxelShape KUCHENFORM = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 6.0D, 15.0D);
     protected static final VoxelShape ZIGFORM = Block.box(7.5D, 6.0D, 7.5D, 8.5D, 11.0D, 8.5D);
     protected static final VoxelShape SHAPE = Shapes.or(KUCHENFORM, ZIGFORM);
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        ItemStack itemstack = pPlayer.getItemInHand(pHand);
+        boolean flag = pState.getValue(LIT);
+        if ((itemstack.is(Items.FLINT_AND_STEEL) || itemstack.is(Items.FIRE_CHARGE)) && !flag) {
+            pLevel.setBlock(pPos, pState.cycle(LIT), 3);
+            if(itemstack.is(Items.FLINT_AND_STEEL)){
+                pLevel.playSound(null, pPos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS,1f,1f);}
+            if(itemstack.is(Items.FIRE_CHARGE)) { pLevel.playSound(null, pPos, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS,1f,1f);}
+        }
+        if( !(itemstack.is(Items.FLINT_AND_STEEL) || itemstack.is(Items.FIRE_CHARGE)) && flag){
+            pLevel.setBlock(pPos, pState.cycle(LIT), 3);
+            pLevel.playSound(null, pPos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS,1f,1f);
+        }
+        if( !(itemstack.is(Items.FLINT_AND_STEEL) || itemstack.is(Items.FIRE_CHARGE)) && !flag){
+            pLevel.setBlockAndUpdate(pPos, ModBlocks.TABAKKUCHEN.get().defaultBlockState().setValue(BISSE, 0));
+            popResource(pLevel, pPos, new ItemStack(ModItems.ZIGARETTE.get()));
+            pPlayer.getFoodData().eat(1, 0.1f);
+        }
+        return InteractionResult.SUCCESS;
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return SHAPE;
     }
@@ -67,33 +86,14 @@ public class TabakkuchenZigBlock extends Block {
     public boolean hasAnalogOutputSignal(BlockState pState) {
         return true;
     }
-
     public boolean isPathfindable(BlockState pState, BlockGetter pLevel, BlockPos pPos, PathComputationType pType) {
         return false;
     }
+
     public ItemStack getCloneItemStack(BlockGetter pLevel, BlockPos pPos, BlockState pState) {
         return new ItemStack(ModBlocks.TABAKKUCHEN.get());
     }
-
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        ItemStack itemstack = pPlayer.getItemInHand(pHand);
-        boolean flag = pState.getValue(LIT);
-        if (itemstack.is(Items.FLINT_AND_STEEL) && !flag) {
-            pLevel.setBlock(pPos, pState.cycle(LIT), 3);
-            pLevel.playSound(null, pPos, ModSounds.DSCHOINT.get(), SoundSource.BLOCKS,2f,2f);
-        }
-        if(itemstack.isEmpty() && flag){
-            pLevel.setBlock(pPos, pState.cycle(LIT), 3);
-            pLevel.playSound(null, pPos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS,1f,1f);
-        }
-        if(itemstack.isEmpty() && !flag){
-            pLevel.setBlockAndUpdate(pPos, ModBlocks.TABAKKUCHEN.get().defaultBlockState().setValue(BISSE, 0));
-            popResource(pLevel, pPos, new ItemStack(ModItems.ZIGARETTE.get()));
-            pPlayer.getFoodData().eat(1, 0.1f);
-        }
-        return InteractionResult.SUCCESS;
-    }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void raucheAmbiente(Level level, BlockPos pos, RandomSource rnd){
         float chance = 0.33f;
         double rx=rnd.nextGaussian()/100;
@@ -109,4 +109,5 @@ public class TabakkuchenZigBlock extends Block {
             raucheAmbiente(pLevel, pPos, pRandom);
         }
     }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

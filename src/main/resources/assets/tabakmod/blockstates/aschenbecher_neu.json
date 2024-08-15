@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "welchezig=0": { "model": "tabakmod:block/aschenbecher_neu" },
+    "welchezig=1": { "model": "tabakmod:block/aschenbecher_zig_neu" },
+    "welchezig=2": { "model": "tabakmod:block/aschenbecher_zigrr_neu" }
+  }
+}

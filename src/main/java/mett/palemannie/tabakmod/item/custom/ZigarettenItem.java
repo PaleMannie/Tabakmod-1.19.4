@@ -125,24 +125,6 @@ public class ZigarettenItem extends Item {
         }
     }
 
-    @Override
-    public InteractionResult useOn(UseOnContext pContext) {
-        InteractionHand pHand = pContext.getHand();
-        Player pPlayer = pContext.getPlayer();
-        ItemStack itemstack = pPlayer.getItemInHand(pHand);
-        Level pLevel = pContext.getLevel();
-        BlockPos pPos = pContext.getClickedPos();
-        BlockState pState = pContext.getLevel().getBlockState(pPos);
-        if(pState.is(ModBlocks.TABAKKUCHEN.get()) && pState.getValue(BISSE) == 0){
-                if(!pPlayer.isCreative()){
-                    itemstack.shrink(1);
-                }
-                pLevel.setBlockAndUpdate(pPos, ModBlocks.TABAKKUCHEN_ZIG.get().defaultBlockState().setValue(LIT, false));
-                pLevel.playSound(null, pPos, ModSounds.ZU_LANGE_GEZOGEN.get(), SoundSource.BLOCKS, 2f, 1f);
-        }
-        return InteractionResult.SUCCESS;
-    }
-
     ////////////////////////////////////////////////////SONSTIGE METHODEN////////////////////////////////////////////////////////////////////
     @Override
     public int getEntityLifespan(ItemStack itemStack, Level level) { return 72000; }
