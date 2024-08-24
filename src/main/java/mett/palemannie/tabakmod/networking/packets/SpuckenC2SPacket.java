@@ -1,5 +1,6 @@
 package mett.palemannie.tabakmod.networking.packets;
 
+import mett.palemannie.tabakmod.entity.custom.SpuckeEntity;
 import mett.palemannie.tabakmod.networking.ModMessages;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
@@ -27,13 +28,13 @@ public class SpuckenC2SPacket {
             ServerLevel sevel = player.getLevel();
             RandomSource rdm = RandomSource.create();
 
-            Snowball snowball = new Snowball(sevel, player);
-            float r = (float)rdm.nextInt(2500,6000)/10000;
+            SpuckeEntity spucke = new SpuckeEntity(sevel, player);
+            float r = (float)rdm.nextInt(3500,5000)/10000;
             float y = player.getYRot();
             float x = player.getXRot();
             float z = 0f;
-            snowball.shootFromRotation(player, x, y, z, r, 1f);
-            sevel.addFreshEntity(snowball);
+            spucke.shootFromRotation(player, x, y, z, r, 1f);
+            sevel.addFreshEntity(spucke);
 
             //ModMessages.sendToPlayer(new SpuckEffektS2CPacket(), player);
 

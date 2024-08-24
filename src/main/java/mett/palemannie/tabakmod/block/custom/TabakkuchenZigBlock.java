@@ -51,8 +51,7 @@ public class TabakkuchenZigBlock extends Block {
         boolean flag = pState.getValue(LIT);
         if ((itemstack.is(Items.FLINT_AND_STEEL) || itemstack.is(Items.FIRE_CHARGE)) && !flag) {
             pLevel.setBlock(pPos, pState.cycle(LIT), 3);
-            if(itemstack.is(Items.FLINT_AND_STEEL)){
-                pLevel.playSound(null, pPos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS,1f,1f);}
+            if(itemstack.is(Items.FLINT_AND_STEEL)){ pLevel.playSound(null, pPos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS,1f,1f);}
             if(itemstack.is(Items.FIRE_CHARGE)) { pLevel.playSound(null, pPos, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS,1f,1f);}
         }
         if( !(itemstack.is(Items.FLINT_AND_STEEL) || itemstack.is(Items.FIRE_CHARGE)) && flag){

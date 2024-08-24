@@ -50,7 +50,7 @@ public class TabakkuchenBlock extends Block {
                 stack.shrink(1);
             }
             pLevel.setBlockAndUpdate(pPos, ModBlocks.TABAKKUCHEN_ZIG.get().defaultBlockState().setValue(LIT, false));
-            pLevel.playSound(null, pPos, ModSounds.ZU_LANGE_GEZOGEN.get(), SoundSource.BLOCKS, 2f, 1f);
+            pLevel.playSound(null, pPos, ModSounds.PFEIFE_LADEN.get(), SoundSource.BLOCKS, 2f, 1f);
             return InteractionResult.FAIL;
 
         }

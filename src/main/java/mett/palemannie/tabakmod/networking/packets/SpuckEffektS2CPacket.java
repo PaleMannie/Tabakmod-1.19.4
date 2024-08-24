@@ -24,10 +24,10 @@ public class SpuckEffektS2CPacket {
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(()-> {
 
-            //Attempted to load class net/minecraft/client/player/LocalPlayer for invalid dist DEDICATED_SERVER
 
-            Player player = Minecraft.getInstance().player;
+            Player player = Minecraft.getInstance().player; //Attempted to load class net/minecraft/client/player/LocalPlayer for invalid dist DEDICATED_SERVER
             Level level = Minecraft.getInstance().level;
+
 
                 RandomSource rdm = RandomSource.create();
                 float r = rdm.nextInt(80, 120) / 100f;

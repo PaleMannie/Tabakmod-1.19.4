@@ -1,15 +1,12 @@
 package mett.palemannie.tabakmod.item.custom;
 
-import mett.palemannie.tabakmod.block.ModBlocks;
 import mett.palemannie.tabakmod.item.ModItems;
 import mett.palemannie.tabakmod.sound.ModSounds;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -17,15 +14,13 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
-import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUtils;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
-
-import static mett.palemannie.tabakmod.block.custom.TabakkuchenBlock.BISSE;
-import static mett.palemannie.tabakmod.block.custom.TabakkuchenZigBlock.LIT;
 
 
 public class ZigarettenItem extends Item {
