@@ -63,32 +63,36 @@ public class PfeifenItem extends Item {
 ////////////////////////////////////////////NUTZMETHODEN////////////////////////////////////////////////////////////////
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
-        RandomSource rdm = RandomSource.create();
-        float r = (float)rdm.nextInt(8,12)/10;
-        pLevel.playSound(null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), ModSounds.TABAKPRODUKT_ANZUENDEN.get(), SoundSource.PLAYERS, 1f, r);
-        return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
+        if(!pPlayer.isUnderWater()) {
+            RandomSource rdm = RandomSource.create();
+            float r = (float) rdm.nextInt(8, 12) / 10;
+            pLevel.playSound(null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), ModSounds.TABAKPRODUKT_ANZUENDEN.get(), SoundSource.PLAYERS, 1f, r);
+            return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
+        } else return  ItemStack.EMPTY.use(pLevel, pPlayer, pUsedHand);
     }
     @Override
     public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pRemainingUseDuration) {
-        super.onUseTick(pLevel, pLivingEntity, pStack, pRemainingUseDuration);
-        RandomSource random = RandomSource.create();
-        float chance = 0.7f;
-        if(pLivingEntity instanceof Player pPlayer && (pRemainingUseDuration <= getUseDuration(pStack) - 10)) {
-            if(chance >= random.nextFloat()){
-                paffe(pLevel, pPlayer);
+        if(!pLivingEntity.isUnderWater()) {
+            super.onUseTick(pLevel, pLivingEntity, pStack, pRemainingUseDuration);
+            RandomSource random = RandomSource.create();
+            float chance = 2f/3f;
+            if (pLivingEntity instanceof Player pPlayer && (pRemainingUseDuration <= getUseDuration(pStack) - 10)) {
+                if (chance >= random.nextFloat()) {
+                    paffe(pLevel, pPlayer);
+                }
+                pStack.hurtAndBreak(1, pPlayer, p -> {
+                    gibRauchStandardEffekte(pPlayer, pStack, pRemainingUseDuration);
+                    ItemStack itemstack = new ItemStack(ModItems.PFEIFE_LEER.get());
+                    p.addItem(itemstack);
+                });
+                if (pStack.getDamageValue() >= pStack.getMaxDamage() - 1) {
+                    exhaliere(pLevel, pPlayer);
+                    RandomSource rdm = RandomSource.create();
+                    float r = (float) rdm.nextInt(8, 12) / 10;
+                    pPlayer.playSound(ModSounds.FERTIG_GERAUCHT.get(), 1f, r);
+                }
             }
-            pStack.hurtAndBreak(1, pPlayer, p -> {
-                gibRauchStandardEffekte(pPlayer, pStack, pRemainingUseDuration);
-                ItemStack itemstack = new ItemStack(ModItems.PFEIFE_LEER.get());
-                p.addItem(itemstack);
-            });
-            if(pStack.getDamageValue() >= pStack.getMaxDamage()-1){
-                exhaliere(pLevel,pPlayer);
-                RandomSource rdm = RandomSource.create();
-                float r = (float)rdm.nextInt(8,12)/10;
-                pPlayer.playSound(ModSounds.FERTIG_GERAUCHT.get(), 1f, r);
-            }
-        }
+        } else releaseUsing(pStack, pLevel, pLivingEntity, pRemainingUseDuration);
     }
     @Override
     public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity, int pTimeCharged) {
@@ -118,6 +122,7 @@ public class PfeifenItem extends Item {
     }
     private void stopUsing(LivingEntity pUser) {
         if(pUser instanceof Player player){
+            player.stopUsingItem();
             player.getCooldowns().addCooldown(this,2);
         }
     }

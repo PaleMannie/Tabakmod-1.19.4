@@ -31,13 +31,13 @@ public class SpuckEffektS2CPacket {
 
                 RandomSource rdm = RandomSource.create();
                 float r = rdm.nextInt(80, 120) / 100f;
+                player.playSound(SoundEvents.LLAMA_SPIT, 1f, r);
 
                 Vec3 MausPos = player.getEyePosition();
                 Vec3 SchauWinkel = player.getLookAngle();
                 level.addParticle(ParticleTypes.SPIT, true,
-                        MausPos.x, MausPos.y - 0.15d, MausPos.z,
-                        SchauWinkel.x / 10, SchauWinkel.y / 10, SchauWinkel.z / 10);
-                player.playSound(SoundEvents.LLAMA_SPIT, r, r);
+                        MausPos.x, MausPos.y, MausPos.z,
+                        SchauWinkel.x/4, SchauWinkel.y/4, SchauWinkel.z/4);
 
         });
         return true;

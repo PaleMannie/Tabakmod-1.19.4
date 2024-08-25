@@ -38,7 +38,7 @@ public class LeerePfeifenItem extends Item {
 
     @Override
     public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pRemainingUseDuration) {
-        if(pRemainingUseDuration == 60 || pRemainingUseDuration == 50 || pRemainingUseDuration == 40 || pRemainingUseDuration == 30 || pRemainingUseDuration == 20 || pRemainingUseDuration == 10){
+        if(pRemainingUseDuration % 10 == 0){
         RandomSource rdm = RandomSource.create();
         float r = (float)rdm.nextInt(8,12)/10;
         pLivingEntity.playSound(ModSounds.PFEIFE_LADEN.get(), 1f,r);

@@ -65,29 +65,33 @@ public class MenthZigarettenItem extends Item {
 ////////////////////////////////////////////////NUTZMETHODEN////////////////////////////////////////////////////////////////////////
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, @NotNull Player pPlayer, @NotNull InteractionHand pUsedHand) {
-        RandomSource rdm = RandomSource.create();
-        float r = (float)rdm.nextInt(8,12)/10;
-        pLevel.playSound(null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), ModSounds.TABAKPRODUKT_ANZUENDEN.get(), SoundSource.PLAYERS, 1f, r);
-        return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
+        if(!pPlayer.isUnderWater()) {
+            RandomSource rdm = RandomSource.create();
+            float r = (float) rdm.nextInt(8, 12) / 10;
+            pLevel.playSound(null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), ModSounds.TABAKPRODUKT_ANZUENDEN.get(), SoundSource.PLAYERS, 1f, r);
+            return ItemUtils.startUsingInstantly(pLevel, pPlayer, pUsedHand);
+        } else return ItemStack.EMPTY.use(pLevel, pPlayer ,pUsedHand);
     }
 
     @Override
     public void onUseTick(Level pLevel, LivingEntity pLivingEntity, ItemStack pStack, int pRemainingUseDuration) {
-        super.onUseTick(pLevel, pLivingEntity, pStack, pRemainingUseDuration);
-        if(pLivingEntity instanceof Player pPlayer && (pRemainingUseDuration <= getUseDuration(pStack) - 15)) {
-            paffe(pLevel,pPlayer);
-            pStack.hurtAndBreak(1, pPlayer, p -> {
-                gibRauchStandardEffekte(pPlayer, pStack, pRemainingUseDuration);
-                ItemStack itemstack = new ItemStack(ModItems.ZIGARETTENSTUMMEL.get());
-                p.drop(itemstack,true);
-            });
-        if(pStack.getDamageValue() >= pStack.getMaxDamage()-1){
-            RandomSource rdm = RandomSource.create();
-            float r = (float)rdm.nextInt(8,12)/10;
-            pPlayer.playSound(ModSounds.FERTIG_GERAUCHT.get(), 1f, r);
-            exhaliere(pLevel,pPlayer);
+        if(!pLivingEntity.isUnderWater()) {
+            super.onUseTick(pLevel, pLivingEntity, pStack, pRemainingUseDuration);
+            if (pLivingEntity instanceof Player pPlayer && (pRemainingUseDuration <= getUseDuration(pStack) - 15)) {
+                paffe(pLevel, pPlayer);
+                pStack.hurtAndBreak(1, pPlayer, p -> {
+                    gibRauchStandardEffekte(pPlayer, pStack, pRemainingUseDuration);
+                    ItemStack itemstack = new ItemStack(ModItems.ZIGARETTENSTUMMEL.get());
+                    p.drop(itemstack, true);
+                });
+                if (pStack.getDamageValue() >= pStack.getMaxDamage() - 1) {
+                    RandomSource rdm = RandomSource.create();
+                    float r = (float) rdm.nextInt(8, 12) / 10;
+                    pPlayer.playSound(ModSounds.FERTIG_GERAUCHT.get(), 1f, r);
+                    exhaliere(pLevel, pPlayer);
+                }
             }
-        }
+        } else releaseUsing(pStack, pLevel, pLivingEntity, pRemainingUseDuration);
     }
 
     @Override
@@ -116,6 +120,7 @@ public class MenthZigarettenItem extends Item {
         }
     private void stopUsing(LivingEntity pUser) {
         if(pUser instanceof Player player){
+            player.stopUsingItem();
             player.getCooldowns().addCooldown(this,2);
         }
     }

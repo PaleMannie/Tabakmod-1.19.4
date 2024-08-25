@@ -3,9 +3,9 @@ loaderVersion="[45,)" #mandatory This is typically bumped every Minecraft versio
 license="Alle Rechte vorbehalten"
 [[mods]] #mandatory
 modId="tabakmod" #mandatory
-version="2 proto 12" #mandatory
+version="2 proto 13" #mandatory
 displayName="Super Tabakmod" #mandatory
-logoFile="examplemod.png" #optional
+logoFile="tabakmod.png" #optional
 credits="Ich, weil ich cool bin" #optional
 authors="Quake 1 Ranger Man" #optional
 
