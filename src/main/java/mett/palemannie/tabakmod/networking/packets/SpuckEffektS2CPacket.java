@@ -24,18 +24,18 @@ public class SpuckEffektS2CPacket {
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(()-> {
 
-
-            Player player = Minecraft.getInstance().player; //Attempted to load class net/minecraft/client/player/LocalPlayer for invalid dist DEDICATED_SERVER
-            Level level = Minecraft.getInstance().level;
+            //Player pl = context.getSender();
+            Player pl = Minecraft.getInstance().player; //Attempted to load class net/minecraft/client/player/LocalPlayer for invalid dist DEDICATED_SERVER
+            Level lvl = Minecraft.getInstance().level;
+            //Level lvl = pl.getLevel();
 
 
                 RandomSource rdm = RandomSource.create();
                 float r = rdm.nextInt(80, 120) / 100f;
-                player.playSound(SoundEvents.LLAMA_SPIT, 1f, r);
-
-                Vec3 MausPos = player.getEyePosition();
-                Vec3 SchauWinkel = player.getLookAngle();
-                level.addParticle(ParticleTypes.SPIT, true,
+                pl.playSound(SoundEvents.LLAMA_SPIT, 1f, r);
+                Vec3 MausPos = pl.getEyePosition();
+                Vec3 SchauWinkel = pl.getLookAngle();
+                lvl.addParticle(ParticleTypes.SPIT, true,
                         MausPos.x, MausPos.y, MausPos.z,
                         SchauWinkel.x/4, SchauWinkel.y/4, SchauWinkel.z/4);
 
