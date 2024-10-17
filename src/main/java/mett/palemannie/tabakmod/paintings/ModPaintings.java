@@ -23,7 +23,7 @@ public class ModPaintings {
     public static final RegistryObject<PaintingVariant> JA_KOGDA_TABAKMOD = PAINTING_VARIANTS.register("ja_kogda_tabakmod", () -> new PaintingVariant(48, 48));
     public static final RegistryObject<PaintingVariant> RYDER_NIGGA = PAINTING_VARIANTS.register("ryder_nigga", () -> new PaintingVariant(32, 32));
     public static final RegistryObject<PaintingVariant> IDU_KURIU_2 = PAINTING_VARIANTS.register("idu_kuriu2", () -> new PaintingVariant(16, 32));
-    public static final RegistryObject<PaintingVariant> IDU_KURIU_3 = PAINTING_VARIANTS.register("idu_kuriu3", () -> new PaintingVariant(32, 48));
+    public static final RegistryObject<PaintingVariant> FILM_FILM_FILM = PAINTING_VARIANTS.register("film_film_film", () -> new PaintingVariant(32, 48));
     public static final RegistryObject<PaintingVariant> IDU_KURIU_4 = PAINTING_VARIANTS.register("idu_kuriu4", () -> new PaintingVariant(32, 16));
     public static final RegistryObject<PaintingVariant> IDU_KURIU_5 = PAINTING_VARIANTS.register("idu_kuriu5", () -> new PaintingVariant(48, 48));
 }

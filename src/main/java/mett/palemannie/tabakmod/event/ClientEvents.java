@@ -1,8 +1,6 @@
 package mett.palemannie.tabakmod.event;
 
 import mett.palemannie.tabakmod.TabakMod;
-import mett.palemannie.tabakmod.networking.ModMessages;
-import mett.palemannie.tabakmod.networking.packets.SpuckenC2SPacket;
 import mett.palemannie.tabakmod.util.KeyBinding;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
@@ -18,8 +16,7 @@ public class ClientEvents {
         public static void onKeyInput(InputEvent.Key event){
             if(KeyBinding.SPUCKTASTE.consumeClick()) {
 
-                ModMessages.sendToServer(new SpuckenC2SPacket());
-
+                //ModMessages.sendToServer(new SpuckenC2SPacket());
             }
         }
     }

@@ -31,7 +31,7 @@ public class SpuckeItem extends Item {
         if (!pPlayer.getAbilities().instabuild) {
             itemstack.shrink(1);
         }
-
         return InteractionResultHolder.sidedSuccess(itemstack, pLevel.isClientSide());
     }
+
 }

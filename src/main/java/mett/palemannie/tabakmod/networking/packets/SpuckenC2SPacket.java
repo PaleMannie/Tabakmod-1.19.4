@@ -35,7 +35,8 @@ public class SpuckenC2SPacket {
             spucke.shootFromRotation(player, x, y, z, r, 1f);
             sevel.addFreshEntity(spucke);
 
-            ModMessages.sendToPlayer(new SpuckEffektS2CPacket(), player);
+            ModMessages.sendToPlayer(new SpuckPartikelS2CPacket(), player);
+            //ModMessages.sendToPlayer(new SpuckTonS2CPacket(), player);
 
         });
         return true;
