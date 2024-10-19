@@ -5,7 +5,7 @@ plugins {
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
-version = 'v2_proto_14_1.19.4'
+version = 'v2.0_1.19.4'
 group = 'mett.palemannie.tabakmod' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'supertabakmod'
 
@@ -85,11 +85,11 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+
 }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.19.4-45.1.16'
-
 }
 
 jar {

@@ -1,8 +1,6 @@
 package mett.palemannie.tabakmod.networking;
 
 import mett.palemannie.tabakmod.TabakMod;
-import mett.palemannie.tabakmod.networking.packets.SpuckPartikelS2CPacket;
-import mett.palemannie.tabakmod.networking.packets.SpuckTonS2CPacket;
 import mett.palemannie.tabakmod.networking.packets.SpuckenC2SPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -29,18 +27,6 @@ public class ModMessages {
                 .decoder(SpuckenC2SPacket::new)
                 .encoder(SpuckenC2SPacket::toBytes)
                 .consumerMainThread(SpuckenC2SPacket::handle)
-                .add();
-
-        net.messageBuilder(SpuckPartikelS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
-                .decoder(SpuckPartikelS2CPacket::new)
-                .encoder(SpuckPartikelS2CPacket::toBytes)
-                .consumerMainThread(SpuckPartikelS2CPacket::handle)
-                .add();
-
-        net.messageBuilder(SpuckTonS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
-                .decoder(SpuckTonS2CPacket::new)
-                .encoder(SpuckTonS2CPacket::toBytes)
-                .consumerMainThread(SpuckTonS2CPacket::handle)
                 .add();
 
     }

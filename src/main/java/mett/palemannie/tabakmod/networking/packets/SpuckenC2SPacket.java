@@ -1,7 +1,7 @@
 package mett.palemannie.tabakmod.networking.packets;
 
 import mett.palemannie.tabakmod.entity.custom.SpuckeEntity;
-import mett.palemannie.tabakmod.networking.ModMessages;
+import mett.palemannie.tabakmod.packetierung.ServerAbspieler;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -35,8 +35,7 @@ public class SpuckenC2SPacket {
             spucke.shootFromRotation(player, x, y, z, r, 1f);
             sevel.addFreshEntity(spucke);
 
-            ModMessages.sendToPlayer(new SpuckPartikelS2CPacket(), player);
-            //ModMessages.sendToPlayer(new SpuckTonS2CPacket(), player);
+            ServerAbspieler.handliereSpucken(player);
 
         });
         return true;
