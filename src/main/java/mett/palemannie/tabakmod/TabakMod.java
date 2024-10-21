@@ -28,12 +28,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(TabakMod.MODID)
 public class TabakMod {
-    // Define mod id in a common place for everything to reference
     public static final String MODID = "tabakmod";
-    // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public TabakMod()
@@ -51,7 +48,6 @@ public class TabakMod {
         ModPaintings.register(modEventBus);
         ModEffects.register(modEventBus);
         ModEntities.register(modEventBus);
-
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -101,6 +97,7 @@ public class TabakMod {
             event.accept(ModItems.PFEIFE);
             event.accept(ModItems.PFEIFE_LEER);
             event.accept(ModItems.DSCHOINT);
+            event.accept(ModItems.KAKERLAKE);
             event.accept(ModItems.ZIGARETTEN);
             event.accept(ModItems.ZIGARREN);
             event.accept(ModItems.ZIGARETTENFILTER);
@@ -118,12 +115,9 @@ public class TabakMod {
 
             event.accept(ModBlocks.ASCHENBECHER);
             event.accept(ModBlocks.ASCHENBECHER_GROSS);
-
         }
-
     }
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent

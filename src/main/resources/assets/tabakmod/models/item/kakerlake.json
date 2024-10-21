@@ -1,0 +1,16 @@
+{
+  "parent": "minecraft:item/generated",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "tabakmod:item/kakerlake_3d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "tabakmod:item/kakerlake_2d"
+    },
+
+    "fixed": {
+      "parent": "tabakmod:item/kakerlake_2d"
+    }
+  }
+}

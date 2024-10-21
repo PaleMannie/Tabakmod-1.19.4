@@ -1,7 +1,10 @@
 package mett.palemannie.tabakmod.item.custom;
 
-import mett.palemannie.tabakmod.effect.ModEffects;
-import net.minecraft.sounds.SoundEvents;
+import mett.palemannie.tabakmod.sound.ModSounds;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -15,18 +18,37 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.extensions.IForgeMobEffect;
+import net.minecraft.world.phys.Vec3;
 
-public class KautabakItem extends Item implements IForgeMobEffect {
-    public KautabakItem(Properties pProperties) { super(pProperties); }
+public class KakerlakenItem extends Item {
+    public KakerlakenItem(Properties pProperties) {
+        super(pProperties);
+    }
 ////////////////////////////////////////////////////EIGENE METHODEN/////////////////////////////////////////////////////
-    void gibEffekt(Player player, int zeit){
-        player.playSound(SoundEvents.SLIME_JUMP, 3f, 1f);
-        player.getFoodData().eat(2, 2);
+    void gibEffekt(Player player){
+        player.getFoodData().eat(1, 1);
 
-        player.addEffect(new MobEffectInstance(ModEffects.SPUCKEN.get(), zeit, 0));
-        player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 150, 0));
-        player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, zeit, 0));
+        player.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 500, 0));
+        player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 500, 0));
+        player.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 250, 0));
+        player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
+        player.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 50, 0));
+    }
+
+    void exhaliere(Level level, Player player){
+        player.playSound(ModSounds.DSCHOINT.get(), 1f, 3f);
+
+        RandomSource rdm = RandomSource.create();
+        float r = (float)rdm.nextInt(9,11)/10;
+        level.playSound(null, player.getX(), player.getY(), player.getZ(), ModSounds.PAFFEN.get(), SoundSource.PLAYERS, 1f, r);
+        Vec3 MausPos = player.getEyePosition();
+        Vec3 SchauWinkel = player.getLookAngle();
+        level.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE,true,
+                MausPos.x, MausPos.y-0.2d, MausPos.z,
+                SchauWinkel.x/20, SchauWinkel.y/20, SchauWinkel.z/20);
+        if (level instanceof ServerLevel slevel) {
+            slevel.sendParticles(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, MausPos.x, MausPos.y-0.2d, MausPos.z, 100, 0.15d, 0d, 0.15d,0.05d);
+        }
     }
 ////////////////////////////////////////////////////NUTZMETHODEN////////////////////////////////////////////////////////
     @Override
@@ -42,7 +64,8 @@ public class KautabakItem extends Item implements IForgeMobEffect {
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
         if(pLivingEntity instanceof Player player) {
-            gibEffekt(player, 600);
+            gibEffekt(player);
+            exhaliere(pLevel, player);
             if(!((Player) pLivingEntity).isCreative()){
                 pStack.shrink(1);
             }
@@ -55,17 +78,14 @@ public class KautabakItem extends Item implements IForgeMobEffect {
             player.getCooldowns().addCooldown(this, 2);
         }
     }
-
 ////////////////////////////////////////////////////SONSTIGE METHODEN///////////////////////////////////////////////////
     @Override
     public UseAnim getUseAnimation(ItemStack pStack) {
-        return UseAnim.EAT;
-    }
+    return UseAnim.EAT;
+}
 
     @Override
-    public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
-        return slotChanged;
-    }
+    public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) { return slotChanged; }
 
     @Override
     public int getEntityLifespan(ItemStack itemStack, Level level) {
@@ -79,6 +99,6 @@ public class KautabakItem extends Item implements IForgeMobEffect {
 
     @Override
     public int getUseDuration(ItemStack pStack) {
-        return 50;
+        return 20;
     }
 }

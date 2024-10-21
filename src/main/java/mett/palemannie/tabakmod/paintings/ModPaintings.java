@@ -26,4 +26,5 @@ public class ModPaintings {
     public static final RegistryObject<PaintingVariant> FILM_FILM_FILM = PAINTING_VARIANTS.register("film_film_film", () -> new PaintingVariant(32, 48));
     public static final RegistryObject<PaintingVariant> IDU_KURIU_4 = PAINTING_VARIANTS.register("idu_kuriu4", () -> new PaintingVariant(32, 16));
     public static final RegistryObject<PaintingVariant> IDU_KURIU_5 = PAINTING_VARIANTS.register("idu_kuriu5", () -> new PaintingVariant(48, 48));
+    public static final RegistryObject<PaintingVariant> TRUBA = PAINTING_VARIANTS.register("truba", () -> new PaintingVariant(64, 48));
 }

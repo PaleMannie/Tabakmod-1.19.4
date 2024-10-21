@@ -21,7 +21,7 @@ public class SpuckenEffect extends MobEffect {
     public void applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
         counter--;
         if((counter % basis == 0) && pLivingEntity.level.isClientSide()) {
-            pLivingEntity.playSound(SoundEvents.SLIME_JUMP, 3f,1f);
+            pLivingEntity.playSound(SoundEvents.SLIME_JUMP, 2f,1f);
             ModMessages.sendToServer(new SpuckenC2SPacket());
             resetCounter(counter);
         }

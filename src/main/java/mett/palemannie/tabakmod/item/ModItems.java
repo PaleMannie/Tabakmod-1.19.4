@@ -76,8 +76,10 @@ public class ModItems
             () -> new ScheisZigarettenItem(new Item.Properties().durability(100)));
     public static final RegistryObject<Item> DSCHOINT = ITEMS.register("dschoint",
             () -> new DschointItem(new Item.Properties().durability(200)));
+    public static final RegistryObject<Item> KAKERLAKE = ITEMS.register("kakerlake",
+            () -> new KakerlakenItem(new Item.Properties().stacksTo(64)));
     public static final RegistryObject<Item> KAUTABAK = ITEMS.register("kautabak",
-            () -> new KautabakItem(new Item.Properties()));
+            () -> new KautabakItem(new Item.Properties().stacksTo(64)));
     public static final RegistryObject<Item> KAUTABAKMISCHE = ITEMS.register("kautabakmische",
             () -> new Item(new Item.Properties()));
 

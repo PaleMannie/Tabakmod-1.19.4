@@ -1,5 +1,6 @@
 package mett.palemannie.tabakmod.item.custom;
 
+import mett.palemannie.tabakmod.item.ModItems;
 import mett.palemannie.tabakmod.sound.ModSounds;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -84,6 +85,8 @@ public class DschointItem extends Item {
                 }
                 pStack.hurtAndBreak(1, pPlayer, p -> {
                     gibRauchStandardEffekte(pPlayer, pStack, pRemainingUseDuration);
+                    ItemStack itemstack = new ItemStack(ModItems.KAKERLAKE.get());
+                    p.drop(itemstack, true);
                 });
                 if (pStack.getDamageValue() >= pStack.getMaxDamage() - 1) {
                     RandomSource rdm = RandomSource.create();
