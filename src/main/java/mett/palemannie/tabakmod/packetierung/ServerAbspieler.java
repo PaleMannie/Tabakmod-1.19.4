@@ -19,7 +19,7 @@ public class ServerAbspieler {
 
         //Entität
         SpuckeEntity spucke = new SpuckeEntity(sevel, player);
-        float re = (float)rdm.nextInt(3500,5000)/10000;
+        float re = (float)rdm.nextInt(4500,5000)/10000;
         float ye = player.getYRot();
         float xe = player.getXRot();
         float ze = 0f;
