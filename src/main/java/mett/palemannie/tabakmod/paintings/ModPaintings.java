@@ -35,4 +35,6 @@ public class ModPaintings {
     public static final RegistryObject<PaintingVariant> OGROMNAYA_SIGARRA = PAINTING_VARIANTS.register("ogromnaya_sigarra", () -> new PaintingVariant(80, 16));
     public static final RegistryObject<PaintingVariant> SIGARETA_BOLSHAYA = PAINTING_VARIANTS.register("sigareta_bolshaya", () -> new PaintingVariant(16, 80));
     public static final RegistryObject<PaintingVariant> TOLKO_SIGARET = PAINTING_VARIANTS.register("tolko_sigaret", () -> new PaintingVariant(48, 32));
+    public static final RegistryObject<PaintingVariant> KURJASHCHIJ_ROBOT = PAINTING_VARIANTS.register("kurjashchij_robot", () -> new PaintingVariant(32, 48));
+
 }
