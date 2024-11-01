@@ -16,14 +16,24 @@ public class SpuckenEffect extends MobEffect {
     void resetCounter(int c){
         c = counter = basis;
     }
+    int basis2 = 25;
+    int counter2 = basis2;
+    void resetCounter2(int c) { c = counter2 = basis2; }
 
     @Override
     public void applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
-        counter--;
-        if((counter % basis == 0) && pLivingEntity.level.isClientSide()) {
-            pLivingEntity.playSound(SoundEvents.SLIME_JUMP, 2f,1f);
-            ModMessages.sendToServer(new SpuckenC2SPacket());
-            resetCounter(counter);
+        if(pLivingEntity.level.isClientSide()) {
+            counter--;
+            counter2--;
+            if ((counter % basis == 0)) {
+                pLivingEntity.playSound(SoundEvents.SLIME_ATTACK, 0.5f, 1f);
+                ModMessages.sendToServer(new SpuckenC2SPacket());
+                resetCounter(counter);
+            }
+            if ((counter2 % basis2 == 0)) {
+                pLivingEntity.playSound(SoundEvents.SLIME_JUMP, 0.5f, 1f);
+                resetCounter2(counter2);
+            }
         }
         super.applyEffectTick(pLivingEntity, pAmplifier);
     }

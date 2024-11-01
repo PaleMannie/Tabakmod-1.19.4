@@ -3,7 +3,7 @@ loaderVersion="[45,)" #mandatory This is typically bumped every Minecraft versio
 license="Alle Rechte vorbehalten"
 [[mods]] #mandatory
 modId="tabakmod" #mandatory
-version="2.0" #mandatory
+version="2.01" #mandatory
 displayName="Super Tabakmod" #mandatory
 logoFile="tabakmod.png" #optional
 credits="Ich, weil ich cool bin" #optional
