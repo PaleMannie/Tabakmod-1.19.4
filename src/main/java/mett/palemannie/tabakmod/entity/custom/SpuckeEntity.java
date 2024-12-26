@@ -2,6 +2,7 @@ package mett.palemannie.tabakmod.entity.custom;
 
 import mett.palemannie.tabakmod.entity.ModEntities;
 import mett.palemannie.tabakmod.item.ModItems;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -32,6 +33,11 @@ public class SpuckeEntity extends ThrowableItemProjectile {
         } else if (this.level.getBlockStates(this.getBoundingBox()).noneMatch(BlockBehaviour.BlockStateBase::isAir)) {
             this.discard();
         }
+
+        if (this.tickCount % 7 == 0) {
+            level.addParticle(ParticleTypes.SPIT, this.getX(), this.getY() + 0.2, this.getZ(), 0d, 0d, 0d);
+        }
+        level.addParticle(ParticleTypes.SPLASH, this.getX(), this.getY() + 0.2, this.getZ(), 0d, 0d, 0d);
     }
 
     @Override
